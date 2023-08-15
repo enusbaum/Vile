@@ -1,0 +1,507 @@
+cls
+open "I", 1, "reg.cde"
+if error > 0 then
+color 4,8
+print "                         Cannot find REG.CDE"
+print ""
+color 15,0
+print "             Sorry, but Vile Editor 1.0 cannot run without this file"
+print ""
+color 7,0
+print "                      -=< Press any key to Exit>=-"
+loop221: cd$= inkey$
+if cd$= "" then loop221:
+goto exit:
+else
+endif
+input#1 jobe$ crlf
+input#1 name1$ crlf
+input#1 adres1$ crlf
+input#1 adres2$ crlf
+input#1 phone$ crlf
+close 1
+if jobe$= "23071092712" then
+reg=1
+else
+reg= 0
+endif
+cls
+open "I", 1, "game1.sve"
+if error > 0 then
+color 7,8
+print ""
+print "                            You have no saved games"
+print ""
+goto exit:
+endif
+input#1, hello
+input#1, name$ crlf
+input#1, ep
+input#1, vit
+input#1, vit1
+input#1, gold
+input#1, agil
+input#1, str
+input#1, mana
+input#1, weapon$ crlf
+input#1, armor$ crlf
+input#1, weapon
+input#1, armor
+input#1, Spell$ crlf
+input#1, level
+input#1, gemstone$ crlf
+input#1, promo4
+input#1, bankgold
+input#1, race$ crlf
+input#1, race
+input#1, prof$ crlf
+input#1, prof
+input#1, potion
+input#1, addon2
+input#1, loca$
+close 1
+main:
+print ""
+if reg= 0 then
+color 7,0
+print ""
+print "                             Please Register"
+print ""
+color 15,0
+print "( V )iew Saved Game"
+endif
+if reg= 1 then
+color 15,0
+print ""
+print "                 Thank you for registering ";
+print name1$
+print ""
+color 7,0
+print "( V )iew  Saved Game"
+color 15,0
+print "( E )dit Saved Game"
+endif
+color 7,0
+print "( Q )uit & Save"
+print ""
+color 8,0
+print "Command";
+input main$
+main$=ucase$(main$)
+if main$= "V" then
+goto view:
+endif
+if main$= "E" then
+if reg= 0 then
+print ""
+color 7,0
+print "Sorry, you may not do this until you register."
+print ""
+goto main:
+endif
+goto edit:
+endif
+if main$= "Q" then
+goto exit3:
+else
+print ""
+color 7,0
+print "Huh ?"
+print ""
+goto main:
+endif
+
+view:
+cls
+print ""
+color 15,0
+print "[1] Name: ";
+print  name$
+color 7,0
+print "[2] Expirence: ";
+print  ep
+color 8,0
+print "[3] Vitality: ";
+print  vit1
+color 7,0
+print "[4] Gold on hand: ";
+print  gold
+color 15,0
+print "[5] Agility: ";
+print  agil
+color 7,0
+print "[6] Strength: ";
+print  str
+color 8,0
+print "[7] Mana: ";
+print  mana
+color 7,0
+print "[XX] Weapon Name: ";
+print  weapon$
+color 15,0
+print "[XX] Armor Name: ";
+print  armor$
+color 7,0
+print "[XX] Weapon Number: ";
+print  weapon
+color 8,0
+print "[XX] Armor Number: ";
+print  armor
+color 7,0
+print "[8] Spell Name: ";
+print  Spell$
+color 15,0
+print "[9] Level: ";
+print  level
+color 7,0
+print "[XX] Gemstone: ";
+print  gemstone$
+color 8,0
+print  "[10] Gold in the Bank: ";
+print  bankgold
+color 7,0
+print "[XX] Your Race: ";
+print  race$
+color 15,0
+print "[XX] Your Race Number: ";
+print  race
+color 7,0
+print "[XX] Your Profession: ";
+print  prof$
+color 8,0
+print "[XX] Your Profession Number: ";
+print  prof
+color 7,0
+print "[11] Your Potions: ";
+print  potion
+print ""
+color 15,0
+print "         -=Press any key=-"
+loop001: x$= inkey$
+if x$= "" then loop001:
+cls
+goto main:
+
+edit:
+cls
+color 7,0
+print "XX= You cannot Edit this"
+print ""
+color 15,0
+print "[1] Name: ";
+print  name$
+color 7,0
+print "[2] Expirence: ";
+print  ep
+color 8,0
+print "[3] Vitality: ";
+print  vit1
+color 7,0
+print "[4] Gold on hand: ";
+print  gold
+color 15,0
+print "[5] Agility: ";
+print  agil
+color 7,0
+print "[6] Strength: ";
+print  str
+color 8,0
+print "[7] Mana: ";
+print  mana
+color 7,0
+print "[XX] Weapon Name: ";
+print  weapon$
+color 15,0
+print "[XX] Armor Name: ";
+print  armor$
+color 7,0
+print "[XX] Weapon Number: ";
+print  weapon
+color 8,0
+print "[XX] Armor Number: ";
+print  armor
+color 7,0
+print "[8] Spell Name: ";
+print  Spell$
+color 15,0
+print "[9] Level: ";
+print  level
+color 7,0
+print "[XX] Gemstone: ";
+print  gemstone$
+color 8,0
+print  "[10] Gold in the Bank: ";
+print  bankgold
+color 7,0
+print "[XX] Your Race: ";
+print  race$
+color 15,0
+print "[XX] Your Race Number: ";
+print  race
+color 7,0
+print "[XX] Your Profession: ";
+print  prof$
+color 8,0
+print "[XX] Your Profession Number: ";
+print  prof
+color 7,0
+print "[11] Your Potions: ";
+print  potion
+color 15,0
+print "[99] Back to Main Menu"
+print ""
+color 7,0
+print "Command";
+input edit$
+if edit$= "1" then
+print ""
+color 7,0
+print "Old name was: ";
+print name$
+color 8,0
+print "New name";
+input name$
+goto edit:
+endif
+if edit$= "2" then
+print ""
+color 7,0
+print "Old amount of Exp.: ";
+print ep
+print ""
+color 15,0
+print "New amount of Ep (0-32000):";
+input ep
+if ep > 32000 then
+ep= 32000
+endif
+if ep < 0 then
+ep= 0
+endif
+goto edit:
+endif
+if edit$= "3" then
+print ""
+color 7,0
+print "Old amount of vitality: ";
+print vit1
+print ""
+color 15,0
+print "New amount of vitality (0-2000):";
+input vit1
+if vit1 > 2000 then
+vit1= 2000
+endif
+if vit1 < 0 then
+vit1= 0
+endif
+goto edit:
+endif
+if edit$= "4" then
+print ""
+color 7,0
+print "Old amount of Gold: ";
+print gold
+print ""
+color 15,0
+print "New amount of Gold (0-1000):";
+input gold
+if gold > 1000 then
+gold= 1000
+endif
+if gold < 0 then
+gold= 0
+endif
+goto edit:
+endif
+if edit$= "5" then
+print ""
+color 7,0
+print "Old amount of Agility: ";
+print agil
+print ""
+color 15,0
+print "New amount of Agility (0-100):";
+input agil
+if agil > 100 then
+agil= 100
+endif
+if agil < 0 then
+agil= 0
+endif
+goto edit:
+endif
+if edit$= "6" then
+print ""
+color 7,0
+print "Old amount of Strength: ";
+print str
+print ""
+color 15,0
+print "New amount of Strength (0-100):";
+input str
+if str > 100 then
+str= 100
+endif
+if str < 0 then
+str= 0
+endif
+goto edit:
+endif
+if edit$= "7" then
+print ""
+color 7,0
+if prof= 1 then
+print ""
+print "     Your Profession cant have Mana or Spells"
+print ""
+loop002: x$= inkey$
+if x$= "" then loop002:
+endif
+print "Old amount of Mana: ";
+print mana
+print ""
+color 15,0
+print "New amount of Mana (0-5000):";
+input mana
+if mana > 5 then
+mana= 5000
+endif
+if mana < 0 then
+mana= 0
+endif
+goto edit:
+endif
+if edit$= "8" then
+spellch:
+print ""
+color 7,0
+print " 1. Wozaru"
+color 15,0
+print " 2. Manuaru"
+color 7,0
+print " 3. Mozaru"
+color 15,0
+print " 3. Cannojo"
+color 7,0
+print " 4. Casoro"
+color 15,0
+print " 5. Xenwozaru"
+print ""
+color 7,0
+print "Which Spell # do you want ";
+input spellch$
+if spellch$= "1" then
+spell$= "Wozaru"
+endif
+if spellch$= "2" then
+spell$= "Manuaru"
+endif
+if spellch$= "3" then
+spell$= "Mozaru"
+endif
+if spellch$= "4" then
+spell$= "Cannojo"
+endif
+if spellch$= "5" then
+spell$= "Casoro"
+endif
+if spellch$= "6" then
+spell$= "Xenwozaru"
+else
+goto spellch:
+endif
+endif
+if edit$= "9" then
+levelch:
+print ""
+color 7,0
+print "Level (1-10) ";
+input level
+if level < 1 then
+level= 1
+endif
+if level > 10 then
+level= 10
+else
+endif
+endif
+if edit$= "10" then
+print ""
+color 7,0
+print "How much money do you want in the bank (1-10000) ";
+input bankgold
+if bankgold > 10000 then
+bankgold= 10000
+endif
+if bankgold < 1 then
+bankgold = 1
+endif
+endif
+if edit$= "11" then
+print ""
+color 7,0
+print "How many potions do you want (1-10000) ";
+input potion
+if potion < 1 then
+potion= 1
+endif
+if potion > 10000 then
+potion= 10000
+endif
+endif
+if edit$= "99" then
+goto main:
+else
+goto edit:
+endif
+
+exit3:
+hello= 0
+chdir "c:\vile"
+open "O", 1, "game1.sve"
+print#1 hello
+print#1 name$
+print#1 ep
+print#1 vit
+print#1 vit1
+print#1 gold
+print#1 agil
+print#1 str
+print#1 mana
+print#1 weapon$
+print#1 armor$
+print#1 weapon
+print#1 armor
+print#1 spell$
+print#1 level
+print#1 gemstone$
+print#1 promo4
+print#1 bankgold
+print#1 race$
+print#1 race
+print#1 prof$
+print#1 prof
+print#1 potion
+print#1 addon2
+print#1 loca$
+
+close 1
+
+exit:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,259 @@
+main:
+cls
+color 7,0
+print "                     Vile 1.0.3b (Build 003) Registration Program"
+print ""
+print ""
+color 7,0
+print "(R)egister Vile 1.0.3b (Build 003)"
+color 8,0
+print "(?)Redraw this page"
+color 7,0
+print "(Q)uit to DOS"
+select1:
+print ""
+color 8,0
+print "Selection";
+input select$
+select$= ucase$(select$)
+if select$= "?" then
+goto main:
+else
+endif
+if select$= "R" then
+cls
+goto reg:
+else
+endif
+if select$= "Q" then
+goto exit:
+else
+print ""
+color 7,0
+print "Huh ?"
+print ""
+color 8,0
+goto select1:
+endif
+
+
+reg:
+print ""
+color 8,0
+print "Your about to Register Vile 1.0.3b (Build 003)"
+color 7,0
+print "There are several thigs you will need"
+color 8,0
+print ""
+print "1. Registration Password"
+print ""
+color 7,0
+print "2. Registration Code"
+print ""
+color 8,0
+print "3. Your Name"
+print ""
+color 7,0
+print "4. Your Adress"
+print ""
+color 8,0
+print "5. You Phone Number"
+print ""
+color 7,0
+both:
+print "Do you have all these (Y/N)";
+input reg1$
+reg1$=ucase$(reg1$)
+if reg1$= "" then
+goto both:
+else
+endif
+if reg1$= "Y" then
+cls
+regpass:
+print ""
+print "Registration Password (XX to exit)";
+input regpass$
+regpass$=ucase$(regpass$)
+if regpass$= "XX" then
+goto main:
+else
+endif
+if regpass$= "LEFRANCOIS-CORINNE" then
+reg= 1
+goto regnum:
+else
+goto wrong:
+endif
+if regpass$= "CREEDS-ARENA" then
+reg= 2
+goto regnum:
+else
+goto wrong:
+endif
+if regpass$= "AGIS-CREED" then
+reg= 3
+goto regnum:
+else
+wrong:
+print ""
+color 4,8
+print "INVALID PASSWORD"
+print ""
+color 2,0
+goto regpass:
+endif
+else
+goto main:
+endif
+
+regnum:
+color 7,0
+print ""
+print "Registration Number (00 to Exit)";
+input regnum$
+if regnum$= "00" then
+goto main:
+else
+endif
+if regnum$= "14098-14-1298-1211" then
+if reg= 1 then
+goto regcv:
+else
+wrongnum:
+print ""
+print "INVALID NUMBER"
+print ""
+goto regnum:
+endif
+if regnum$= "2920-000-231163-35" then
+if reg= 2 then
+goto regcv:
+endif
+else
+goto wrongnum:
+endif
+if regnum$= "78-9204-2372-10984" then
+if reg= 3 then
+goto regcv2:
+else
+goto wrongnum:
+endif
+else
+goto wrongnum:
+endif
+
+regcv:
+print ""
+color 2,0
+print "Your Full name";
+input name$
+print ""
+color 7,0
+print "The First line of your Adress";
+input adres1$
+print ""
+color 2,0
+print "The Second line of your adress (County, State, ZIP)";
+input adres2$
+print ""
+color 7,0
+print "Your Phone Number";
+input phone$
+print ""
+color 2,0
+jobe$="23071092712"
+reglevel = 1
+print "Working";
+chdir "c:\vile"
+open "O", 1, "reg.cde"
+print#1 jobe$
+print#1 name$
+print#1 adres1$
+print#1 adres2$
+print#1 phone$
+print#1 reglevel
+close 1
+print ""
+color 7,0
+print "Vile 1.0.3b (Build 003) is now REGISTERED at level";
+color 15,0
+print " 1"
+print ""
+color 2,0
+print "Press any key"
+loop1: x$= inkey$
+if x$= "" then loop1:
+goto main:
+else
+endif
+
+
+regcv:
+print ""
+color 8,0
+print "Your Full name";
+input name$
+print ""
+color 7,0
+print "The First line of your Adress";
+input adres1$
+print ""
+color 8,0
+print "The Second line of your adress (County, State, ZIP)";
+input adres2$
+print ""
+color 7,0
+print "Your Phone Number";
+input phone$
+print ""
+color 8,0
+reglevel= 2
+jobe$="124459875621"
+print "Working";
+chdir "c:\vile"
+open "O", 1, "reg.cde"
+print#1 jobe$
+print#1 name$
+print#1 adres1$
+print#1 adres2$
+print#1 phone$
+print#1 reglevel
+close 1
+print ""
+color 7,0
+print "Vile 1.0.3b (Build 003) is now REGISTERED at level";
+color 15,0
+print " 2"
+print ""
+color 2,0
+print "Press any key"
+loop1: x$= inkey$
+if x$= "" then loop1:
+goto main:
+else
+endif
+
+
+
+if reg1$= "N" then
+goto main:
+else
+goto reg:
+endif
+
+exit:
+cls
+print ""
+print ""
+print "        Vile is a Registered Copyright of Toilet Duck Computer Lab."
+print ""
+print ""
+print " You may NOT distribute these files and all must maintain there orignal" 
+print "                                  names"
+print ""
+print ""
+print "                             Copyright 1997"
+print ""
+print ""
+print ""

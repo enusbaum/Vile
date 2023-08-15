@@ -1,0 +1,714 @@
+cls
+color 15,0
+print "Loading Stats.";
+chdir "c:\vile"
+open "I", 1, "game1.sve"
+input#1, hello
+input#1, name$ crlf
+input#1, ep
+input#1, vit
+input#1, vit1
+input#1, gold
+input#1, agil
+input#1, str
+input#1, mana
+input#1, weapon$ crlf
+input#1, armor$ crlf
+input#1, weapon
+input#1, armor
+input#1, Spell$ crlf
+input#1, level
+input#1, gemstone$ crlf
+input#1, promo4
+input#1, bankgold
+input#1, race$ crlf
+input#1, race
+input#1, prof$ crlf
+input#1, prof
+input#1, potion
+close 1
+print "."
+color 7,0
+print "Loading any/all Graphics ";
+open "i", 1, "c:\vile\data\casino.vil"
+input#1, casino1$ crlf
+input#1, casino2$ crlf
+input#1, casino3$ crlf
+input#1, casino4$ crlf
+input#1, casino5$ crlf
+input#1, casino6$ crlf
+input#1, casino7$ crlf
+input#1, casino8$ crlf
+input#1, casino9$ crlf
+input#1, casino10$ crlf
+close 1
+print ".";
+open "i", 1, "c:\vile\data\lottery.vil"
+input#1, lot1$ crlf
+input#1, lot2$ crlf
+input#1, lot3$ crlf
+input#1, lot4$ crlf
+input#1, lot5$ crlf
+input#1, lot6$ crlf
+input#1, lot7$ crlf
+input#1, lot8$ crlf
+input#1, lot9$ crlf
+close 1
+print ".";
+open "i",1,"c:\vile\data\guess#.vil"
+input#1, number1$ crlf
+input#1, number2$ crlf
+input#1, number3$ crlf
+input#1, number4$ crlf
+input#1, number5$ crlf
+input#1, number6$ crlf
+input#1, number7$ crlf
+input#1, number8$ crlf
+input#1, number9$ crlf
+close 1
+print ".";
+open "I", 1, "c:\vile\data\slot.vil"
+input#1, slot1$ crlf
+input#1, slot2$ crlf
+input#1, slot3$ crlf
+input#1, slot4$ crlf
+input#1, slot5$ crlf
+input#1, slot6$ crlf
+input#1, slot7$ crlf
+input#1, slot8$ crlf
+input#1, slot9$ crlf
+input#1, slot10$ crlf
+input#1, slot11$ crlf
+input#1, slot12$ crlf
+input#1, slot13$ crlf
+input#1, slot14$ crlf
+input#1, slot15$ crlf
+close 1
+print ".";
+open "I", 1, "c:\vile\data\name.vil"
+input#1, line1$ crlf
+input#1, line2$ crlf
+input#1, line3$ crlf
+close 1
+print "."
+
+casino:
+cls
+print ""
+print "                         You have ";
+print gold;
+print " gold."
+print casino1$
+print casino2$
+print casino3$
+print casino4$
+print casino5$
+print casino6$
+print casino7$
+print casino8$
+print casino9$
+print casino10$
+print ""
+casino1:
+print "                           Command";
+input casino$
+casino$= ucase$(casino$)
+if casino$= "H" then
+goto horserace:
+endif
+if casino$= "S" then
+goto slot:
+else
+endif
+if casino$= "G" then
+goto number:
+endif
+if casino$= "B" then
+goto exit:
+else
+endif
+if casino$= "L" then
+goto lottery:
+else
+print ""
+print "                         Not a Command"
+print ""
+goto casino1:
+endif
+
+HORSERACE:
+if gold < 1 then
+casinogold:
+cls
+print ""
+print "               You don't have enough gold to play this"
+print ""
+loop9913: cv$= inkey$
+if cv$= "" then loop9913:
+goto casino:
+endif
+cls
+print ""
+color 7,0
+print "Which Horse will you be betting on:"
+print ""
+print "   Name              Odds"
+print ""
+print "1. Money Maker";
+odd1= rnd (0)
+odd1= odd1 mod 5
+odd1= odd1+2
+print odd1;
+print ":1"
+print "2. Goblin Maiden";
+odd2= rnd (0)
+odd2= odd2 mod 8
+odd2= odd2+2
+print odd2;
+print ":1"
+print "3. Xentar";
+odd3= rnd (0)
+odd3= odd3 mod 10
+odd3= odd3+2
+print odd3;
+print ":1"
+print "4. Krailer";
+odd4= rnd (0)
+odd4= odd4 mod 3
+odd4= odd4+2
+print odd4;
+print ":1"
+print "5. Star Runner";
+odd5= rnd (0)
+odd5= odd5 mod 15
+odd5= odd5+2
+print odd5;
+print ":1"
+print ""
+horsenum: print "Which # will you be betting on (1-5)";
+input horse
+if horse > 5 then
+print ""
+print "Sorry this Horse is not running"
+print ""
+goto horsenum:
+else
+endif
+horsebet:
+print ""
+print "How Much will you be betting (1000 Max)";
+input goldbet
+if goldbet > 1000 then
+print ""
+print "That is too much gold"
+print ""
+goto horsebet:
+endif
+if gold < goldbet then
+print ""
+print "Sorry you dont have that much gold"
+print ""
+color 7,0
+goto horsebet:
+else
+endif
+gold= gold-goldbet
+winhorse= rnd (0)
+winhorse= winhorse mod 5
+winhorse= winhorse+1
+color 15,0
+if winhorse= 1 then
+winodd= odd1
+print ""
+print "It Money Maker by a nose"
+print ""
+else
+endif
+if winhorse= 2 then
+winodd= odd2
+print ""
+print "Its Goblin Maiden by a long shot"
+print ""
+else
+endif
+if winhorse= 3 then
+winodd= odd3
+print ""
+print "Its Xentaur all alone in the front"
+print ""
+else
+endif
+if winhorse= 4 then
+winodd= odd4
+print ""
+print "Krailer wins by a long shot"
+print ""
+else
+endif
+if winhorse= 5 then
+winodd= odd5
+print ""
+print "It's Star runner by a nose"
+print ""
+else
+endif
+print ""
+if winhorse = horse then
+winning= goldbet*winodd
+gold= gold+winning
+print "You won ";
+print winning;
+print " gold !!"
+print ""
+loop5599: x$=inkey$
+if x$= "" then loop5599:
+goto casino:
+else
+endif
+print ""
+print "Sorry your horse didn't come in"
+print ""
+color 7,0
+loop5598: x$=inkey$
+if x$= "" then loop5598:
+goto casino:
+
+SLOT:
+if gold < 10 then
+goto casinogold:
+endif
+cls
+gold= gold-10
+slots1= rnd (0)
+slots1= slots1 mod 5
+slots1= slots1+1
+if slots1= 1 then
+slots1$= "Lemon"
+else
+endif
+if slots1= 2 then
+slots1$= "Plum"
+else
+endif
+if slots1= 3 then
+slots1$= "Cherry"
+else
+endif
+if slots1= 4 then
+slots1$= "Bell"
+else
+endif
+if slots1= 5 then
+slots1$= "Fish"
+else
+endif
+slots2= rnd (0)
+slots2= slots2 mod 5
+slots2= slots2+1
+if slots2= 1 then
+slots2$= "Lemon"
+else
+endif
+if slots2= 2 then
+slots2$= "Plum"
+else
+endif
+if slots2= 3 then
+slots2$= "Cherry"
+else
+endif
+if slots2= 4 then
+slots2$= "Bell"
+else
+endif
+if slots2= 5 then
+slots2$= "Fish "
+else
+endif
+slots3= rnd (0)
+slots3= slots3 mod 5
+slots3= slots3+1
+if slots3= 1 then
+slots3$= "Lemon"
+else
+endif
+if slots3= 2 then
+slots3$= "Plum"
+else
+endif
+if slots3= 3 then
+slots3$= "Cherry"
+else
+endif
+if slots3= 4 then
+slots3$= "Bell"
+else
+endif
+if slots3= 5 then
+slots3$= "Fish"
+else
+endif
+color 7,0
+print slot1$
+print slot2$
+print slot3$
+print slot4$
+print slot5$
+print slot6$
+print slot7$
+print slot8$
+print slot9$
+print slot10$
+print slot11$
+print slot12$
+print slot13$
+print slot14$
+print slot15$
+color 4,0
+locate 5,2
+print slots1$;
+locate 5,9
+print slots2$;
+locate 5,16
+print slots3$;
+color 7,0
+total= slots1+slots2
+total= total+slots3
+if total= 15 then
+gold= gold+1000
+win= 1000
+goto winner:
+else
+endif
+if total = 1 then
+lost1:
+locate 14,0
+print ""
+print "        You lost"
+print ""
+loop4589: X$=inkey$
+if x$= "" then loop4589:
+goto casino:
+endif
+if total= 2 then
+goto lost1:
+else
+endif
+if total = 3 then
+goto lost1:
+else
+endif
+if total = 4 then
+goto lost1:
+else
+endif
+if total = 5 then
+goto lost1:
+else
+endif
+if total = 6 then
+goto lost1:
+else
+endif
+if total = 7 then
+goto lost1:
+else
+endif
+if total = 8 then
+goto win10:
+else
+endif
+if total = 9 then
+win10:
+gold= gold+10
+win= 10
+goto winner:
+else
+endif
+if total = 10 then
+win30:
+gold= gold+20
+win= 20
+goto winner:
+else
+endif
+if total = 11 then
+goto win30:
+else
+endif
+if total = 12 then
+goto win10:
+else
+endif
+if total = 13 then
+win100:
+gold= gold+25
+win= 25
+goto winner:
+else
+endif
+if total = 14 then
+gold= gold+50
+win= 50
+goto winner:
+else
+endif
+if total= 15 then
+gold= gold+100
+win= 100
+goto winner:
+else
+endif
+
+NUMBER:
+if gold < 1 then
+goto casinogold:
+endif
+cls
+color 7,0
+choosenum:
+print "Choose A Number (1-10)";
+input guess
+if guess > 10 then
+print ""
+print "This number is too Big"
+print ""
+goto choosenum:
+else
+endif
+if guess < 1 then
+print ""
+print "This number is too Small"
+print ""
+goto choosenum:
+else
+endif
+odds= rnd (0)
+odds= odds mod 9
+odds=odds+2
+print " The Odds are 1:";
+print odds
+print ""
+guessbet:
+print "How Much will you be betting (500 Max)";
+input bet
+if but > gold then
+print ""
+print "Sorry you dont have enough gold to bet that much"
+print ""
+goto guessbet:
+else
+endif
+if bet > 500 then
+print ""
+print "This is too much money. We don't play Hardball"
+print ""
+goto guessbet:
+else
+endif
+cls
+correct1:
+print "You will be betting";
+print bet;
+print " gold on the number";
+print guess;
+print " with 1:";
+print odds;
+print " odds"
+print ""
+print "Is this Correct (Y/N)";
+input correct$
+correct$=ucase$(correct$)
+if correct$= "N" then
+goto casino:
+else
+endif
+if correct$= "Y" then
+cls
+color 7,0
+print number1$
+print number2$
+print number3$
+print number4$
+print number5$
+print number6$
+print number7$
+print number8$
+print number9$
+locate 3,22
+color 8,0
+print "1:";
+print odds
+locate 3,40
+print bet
+locate 5,29
+print guess
+num= rnd (0)
+num= num mod 10
+num=num+1
+locate 5,46
+print num
+locate 9,25
+if num=guess then
+color 15,0
+print "YOU WIN";
+win=odds*bet
+gold=gold+win
+print win;
+print " GOLD."
+loop1118: x$=inkey$
+if x$="" then loop1118:
+goto casino:
+else
+color 7,0
+print "YOU LOOSE";
+print bet;
+print " GOLD"
+gold=gold-bet
+loop1119: x$=inkey$
+if x$="" then loop1119:
+goto casino:
+endif
+else
+print ""
+print "NOT A VALID CHOICE"
+print ""
+goto correct1:
+endif
+
+LOTTERY:
+
+win=0
+cls
+if gold < 5 then
+goto casinogold:
+endif
+print "REMEMBER: To win, you must get the same numbers, in the same place"
+print "          to recive the prize money."
+gold= gold-5
+num1:
+print ""
+print "What is your first number (1-10)";
+input num1
+if num1 > 10 then
+print ""
+print "This Number is to big"
+print ""
+goto num1:
+endif
+num2:
+print ""
+print "What is your second number (1-10)";
+input num2
+if num2 > 10 then
+print ""
+print "This Number is to big"
+print ""
+goto num2:
+endif
+num3:
+print ""
+print "What is your third number (1-10)";
+input num3
+if num3 > 10 then
+print ""
+print "This Number is to big"
+print ""
+goto num3:
+endif
+cls
+print lot1$
+print lot2$
+print lot3$
+print lot4$
+print lot5$
+print lot6$
+print lot7$
+print lot8$
+print lot9$
+locate 5,24
+print num1;
+print num2;
+print num3
+lot1= rnd (0)
+lot1=lot1 mod 10
+lot1=lot1+1
+locate 7,24
+print lot1;
+lot2= rnd (0)
+lot2=lot2 mod 10
+lot2=lot2+1
+print lot2;
+lot3= rnd (0)
+lot3=lot3 mod 10
+lot3=lot3+1
+print lot3
+if lot1= num1 then
+win= win+5
+endif
+if lot2=num2 then
+win=win+5
+endif
+if lot3=num3 then
+win=win+5
+endif
+if win= 0 then
+locate 9,30
+print "YOU LOST"
+else
+locate 9,24
+print "YOU WON";
+print win;
+print " GOLD !"
+gold= gold+win
+endif
+loop1983: x$=inkey$
+if x$= "" then loop1983:
+goto casino:
+
+
+winner:
+locate 14,0
+print ""
+color 7,8
+print "You won ";
+print win;
+print " gold"
+print ""
+color 7,0
+loop1239: x$=inkey$
+if x$= "" then loop1239:
+goto casino:
+
+
+exit:
+hello= 0
+chdir "c:\vile"
+kill "game1.sve"
+run "copy c:\vile\temp\game.bak"
+name "game.bak" AS "game1.sve"
+open "O", 1 "game1.sve"
+print#1 hello
+print#1 name$
+print#1 ep
+print#1 vit
+print#1 vit1
+print#1 gold
+print#1 agil
+print#1 str
+print#1 mana
+print#1 weapon$
+print#1 armor$
+print#1 weapon
+print#1 armor
+print#1 spell$
+print#1 level
+print#1 gemstone$
+print#1 promo4
+print#1 bankgold
+print#1 race$
+print#1 race
+print#1 prof$
+print#1 prof
+print#1 potion
+close 1

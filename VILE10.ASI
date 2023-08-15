@@ -1,0 +1,4132 @@
+REM Vile 1.0.3b (Build 003) Source Code
+REM Is the next chapter in Quest
+REM This source code is not to be released to ANYONE !!
+REM This Program has a Hidden Identity Mark
+REM --Code Starts--
+randomize
+cls
+color 7,0
+print "Loading Graphics ["
+locate 0,29
+print "]"
+locate 0,18
+print ".";
+open "I", 1, "c:\vile\data\opening.vil"
+input#1, opening0$ crlf
+input#1, opening1$ crlf
+input#1, opening2$ crlf
+input#1, opening3$ crlf
+input#1, opening4$ crlf
+input#1, opening5$ crlf
+input#1, opening6$ crlf
+input#1, opening7$ crlf
+input#1, opening8$ crlf
+input#1, opening9$ crlf
+input#1, opening10$ crlf
+input#1, opening11$ crlf
+input#1, opening12$ crlf
+input#1, opening13$ crlf
+input#1, opening14$ crlf
+input#1, opening15$ crlf
+input#1, opening16$ crlf
+input#1, opening17$ crlf
+input#1, opening18$ crlf
+input#1, opening19$ crlf
+input#1, opening20$ crlf
+input#1, opening21$ crlf
+close 1
+print ".";
+open "i", 1, "c:\vile\data\stats.vil"
+input#1, stats1$ crlf
+input#1, stats2$ crlf
+input#1, stats3$ crlf
+input#1, stats4$ crlf
+input#1, stats5$ crlf
+input#1, stats6$ crlf
+input#1, stats7$ crlf
+input#1, stats8$ crlf
+input#1, stats9$ crlf
+input#1, stats10$ crlf
+close 1
+print ".";
+open "i", 1, "c:\vile\data\spell.vil"
+input#1, spells1$ crlf
+input#1, spells2$ crlf
+input#1, spells3$ crlf
+input#1, spells4$ crlf
+input#1, spells5$ crlf
+input#1, spells6$ crlf
+input#1, spells7$ crlf
+input#1, spells8$ crlf
+input#1, spells9$ crlf
+input#1, spells10$ crlf
+input#1, spells11$ crlf
+input#1, spells12$ crlf
+input#1, spells13$ crlf
+close 1
+print "s";
+open "I", 1, "c:\vile\data\name.vil"
+input#1, line1$ crlf
+input#1, line2$ crlf
+input#1, line3$ crlf
+close 1
+print "s";
+open "I", 1, "c:\vile\data\menu.vil"
+input#1, menu1$ crlf
+input#1, menu2$ crlf
+input#1, menu3$ crlf
+input#1, menu4$ crlf
+input#1, menu5$ crlf
+input#1, menu6$ crlf
+input#1, menu7$ crlf
+input#1, menu8$ crlf
+input#1, menu9$ crlf
+close 1
+print "s";
+open "I", 1,"c:\vile\data\armr.vil"
+input#1, armr1$ crlf
+input#1, armr2$ crlf
+input#1, armr3$ crlf
+input#1, armr4$ crlf
+input#1, armr5$ crlf
+input#1, armr6$ crlf
+input#1, armr7$ crlf
+input#1, armr8$ crlf
+input#1, armr9$ crlf
+input#1, armr10$ crlf
+input#1, armr11$ crlf
+input#1, armr12$ crlf
+input#1, armr13$ crlf
+input#1, armr14$ crlf
+input#1, armr15$ crlf
+input#1, armr16$ crlf
+input#1, armr17$ crlf
+input#1, armr18$ crlf
+input#1, armr19$ crlf
+input#1, armr20$ crlf
+input#1, armr21$ crlf
+input#1, armr22$ crlf
+input#1, armr23$ crlf
+input#1, armr24$ crlf
+input#1, armr25$ crlf
+input#1, armr26$ crlf
+input#1, armr27$ crlf
+input#1, armr28$ crlf
+input#1, armr29$ crlf
+input#1, armr30$ crlf
+input#1, armr31$ crlf
+input#1, armr32$ crlf
+input#1, armr33$ crlf
+input#1, armr34$ crlf
+input#1, armr35$ crlf
+input#1, armr36$ crlf
+close 1
+print "S";
+open "I", 1,"c:\vile\data\weap.vil"
+input#1, weapn1$ crlf
+input#1, weapn2$ crlf
+input#1, weapn3$ crlf
+input#1, weapn4$ crlf
+input#1, weapn5$ crlf
+input#1, weapn6$ crlf
+input#1, weapn7$ crlf
+input#1, weapn8$ crlf
+input#1, weapn9$ crlf
+input#1, weapn10$ crlf
+input#1, weapn11$ crlf
+input#1, weapn12$ crlf
+input#1, weapn13$ crlf
+input#1, weapn14$ crlf
+input#1, weapn15$ crlf
+input#1, weapn16$ crlf
+input#1, weapn17$ crlf
+input#1, weapn18$ crlf
+input#1, weapn19$ crlf
+input#1, weapn20$ crlf
+input#1, weapn21$ crlf
+input#1, weapn22$ crlf
+input#1, weapn23$ crlf
+input#1, weapn24$ crlf
+input#1, weapn25$ crlf
+input#1, weapn26$ crlf
+input#1, weapn27$ crlf
+input#1, weapn28$ crlf
+input#1, weapn29$ crlf
+input#1, weapn30$ crlf
+input#1, weapn31$ crlf
+input#1, weapn32$ crlf
+input#1, weapn33$ crlf
+input#1, weapn34$ crlf
+input#1, weapn35$ crlf
+input#1, weapn36$ crlf
+close 1
+print "S";
+open "I", 1, "c:\vile\data\help.vil"
+input#1, help0$ crlf
+input#1, help1$ crlf
+input#1, help2$ crlf
+input#1, help3$ crlf
+input#1, help4$ crlf
+input#1, help5$ crlf
+input#1, help6$ crlf
+input#1, help7$ crlf
+input#1, help8$ crlf
+input#1, help9$ crlf
+input#1, help10$ crlf
+input#1, help11$ crlf
+input#1, help12$ crlf
+input#1, help13$ crlf
+input#1, help14$ crlf
+input#1, help15$ crlf
+input#1, help16$ crlf
+input#1, help17$ crlf
+input#1, help18$ crlf
+input#1, help19$ crlf
+input#1, help20$ crlf
+input#1, help21$ crlf
+input#1, help22$ crlf
+close 1
+print "S";
+open "I", 1, "C:\vile\data\close.vil"
+input#1, close1$ crlf
+input#1, close2$ crlf
+input#1, close3$ crlf
+input#1, close4$ crlf
+input#1, close5$ crlf
+input#1, close6$ crlf
+input#1, close7$ crlf
+input#1, close8$ crlf
+input#1, close9$ crlf
+input#1, close10$ crlf
+input#1, close11$ crlf
+input#1, close12$ crlf
+input#1, close13$ crlf
+input#1, close14$ crlf
+input#1, close15$ crlf
+input#1, close16$ crlf
+input#1, close17$ crlf
+input#1, close18$ crlf
+input#1, close19$ crlf
+close 1
+print "$";
+open "I", 1, "c:\vile\data\misc.vil"
+input#1, expir0$ crlf
+input#1, expir1$ crlf
+input#1, expir2$ crlf
+input#1, expir3$ crlf
+input#1, expir4$ crlf
+input#1, expir5$ crlf
+input#1, expir6$ crlf
+input#1, expir7$ crlf
+input#1, expir8$ crlf
+input#1, expir9$ crlf
+input#1, expir10$ crlf
+input#1, expir11$ crlf
+input#1, expir12$ crlf
+input#1, expir13$ crlf
+input#1, expir14$ crlf
+input#1, expir15$ crlf
+input#1, expir16$ crlf
+input#1, pub1$ crlf
+input#1, pub2$ crlf
+input#1, pub3$ crlf
+input#1, pub4$ crlf
+input#1, pub5$ crlf
+input#1, pub6$ crlf
+input#1, pub7$ crlf
+input#1, pub8$ crlf
+input#1, pub9$ crlf
+input#1, temple1$ crlf
+input#1, temple2$ crlf
+input#1, temple3$ crlf
+input#1, temple4$ crlf
+input#1, temple5$ crlf
+input#1, temple6$ crlf
+input#1, temple7$ crlf
+input#1, temple8$ crlf
+input#1, temple9$ crlf
+input#1, temple10$ crlf
+input#1, temple11$ crlf
+input#1, temple12$ crlf
+close 1
+print "$"
+cls
+print opening0$
+print opening1$
+print opening2$
+print opening3$
+print opening4$
+print opening5$
+print opening6$
+print opening7$
+print opening8$
+print opening9$
+print opening10$
+print opening11$
+print opening12$
+print opening13$
+print opening14$
+print opening15$
+print opening16$
+print opening17$
+print opening18$
+print opening19$
+print opening20$
+print opening21$
+open "I", 1, "reg.cde"
+if error > 0 then
+color 4,8
+print "                         Cannot find REG.CDE"
+print ""
+color 7,0
+print "             Sorry, but Vile 1.0.3b (Build 003) cannot run without this" 
+print "                                 file"
+print ""
+color 8,0
+print "                      -=< Press any key to Exit>=-"
+loop221: cd$= inkey$
+if cd$= "" then loop221:
+goto exits:
+endif
+input#1 jobe$ crlf
+input#1 name$ crlf
+input#1 adres1$ crlf
+input#1 adres2$ crlf
+input#1 phone$ crlf
+close 1
+if jobe$= "23071092712" then
+reg=1
+endif
+if jobe$= "124459875621" then
+reg = 2
+endif
+if reg= 1 then
+goto wait0:
+else
+goto wait1:
+endif
+wait1:
+print "                        -=[Registration Delay]=-"
+qw= 0
+loop0029:
+qw= qw+1
+if qw = 32000 then
+hit = hit+1
+if hit = 250 then
+goto wait0:
+else
+goto loop0029:
+endif
+else
+goto loop0029:
+endif
+REM Above is the Registration Delay
+REM Below there is no Delay
+wait0:
+qw= 0
+loop0041: qw= qw+1
+if qw < 32000 then
+goto loop0041:
+endif
+hitkey:
+color 7,8
+print "                      -=[Press any key to enter]=-"
+loop720: g$= inkey$
+if g$= "" then loop720:
+cls
+open "i",1,"play.tim"
+if error > 0 then
+color 4,8
+print "                         Cannot find PLAY.TIM"
+print ""
+color 7,0
+print "             Sorry, but Vile 1.0.3b (Build 003) cannot run without this" 
+print "                                 file"
+print ""
+color 8,0
+print "                      -=< Press any key to Exit>=-"
+loop228: cd$= inkey$
+if cd$= "" then loop228:
+goto exits:
+endif
+input#1, timx
+close 1
+if timx = 100 then
+goto time:
+else
+timx= timx+1
+open "o",1,"play.tim"
+print#1, timx
+close 1
+endif
+beginprog:
+startprog:
+newchar:
+print ""
+print ""
+print ""
+print ""
+color 8,0
+print "                        Welcome to Vile ver. 1.0.3b (Build 003)"
+newchar1:
+over:
+cls
+if jobe$= "23071092712" then
+reg=1
+color 7,0
+print ""
+print "                          Thank you for Registering"
+print ""
+color 8,0
+print "                    Registered to: ";
+print name$;
+print " at level ";
+print reg
+print ""
+else
+reg=0
+print ""
+color 7,0
+print ""
+xxfg= 100-timx
+print "             You may play";
+print xxfg;
+print " more times until you MUST register"
+print "                     Please Register Vile 1.0.3b (Build 003)"
+endif
+print ""
+color 8,0
+print menu1$
+print menu2$
+color 7,0
+print menu3$
+color 8,0
+print menu4$
+color 7,0
+print menu5$
+print menu6$
+print menu7$
+color 8,0
+print menu8$
+color 7,0
+print menu9$
+select:
+print ""
+print "                                Selection";
+input select$
+select$=ucase$(select$)
+color 7,0
+if select$= "E" then
+print ""
+print ""
+goto exit1:
+endif
+if select$= "N" then
+cls
+goto selection:
+endif
+if select$= "?" then
+goto over:
+endif
+if select$= "L" then
+if youdie= 1 then
+color 7,8
+print ""
+print "                 This is not a valid choice since you just died"
+print ""
+color 7,0
+goto newchar1:
+else
+endif
+print ""
+goto levelc:
+else
+color 8,0
+print ""
+print "                       I do not under stand this command."
+print ""
+goto select:
+endif
+selection:
+color 15,0
+print "Select a race"
+print ""
+color 7,0
+print "(1) Human"
+color 8,0
+print "(2) Elf"
+color 7,0
+print "(3) Ogre"
+color 15,0
+print "(4) Goblin"
+color 7,0
+print "(5) Dwarf"
+print ""
+color 8,0
+print "Command";
+input race1$
+if race1$= "4" then
+race$= "Goblin"
+race= 4
+goto selectprof:
+endif
+if race1$= "5" then
+race$= "Dwarf"
+race= 5
+goto selectprof:
+endif
+if race1$= "1" then
+race$= "Human"
+race=1
+goto selectprof:
+endif
+if race1$= "2" then
+race$= "Elf"
+race=2
+goto selectprof:
+endif
+if race1$= "3" then
+race$= "Ogre"
+race=3
+goto selectprof:
+endif
+if race1$= "666" then
+race$= "Satan"
+race=99
+goto selectprof:
+endif
+if race1$= "1227" then
+race$= "Goddess"
+race=99
+goto selectprof:
+endif
+if race1$= "1019" then
+race$= "God"
+race=99
+goto selectprof:
+else
+print ""
+print "NOT A VALID CHOICE!"
+print ""
+goto selection:
+endif
+selectprof:
+cls
+color 15,0
+print "Choose a Profession"
+print ""
+color 7,0
+print "(1) Warrior"
+color 8,0
+print "(2) Paladin"
+color 7,0
+print "(3) Sorcerer"
+print ""
+color 15,0
+print "Selection";
+input prof1$
+if prof1$= "1" then
+prof$= "Warrior"
+prof= 1
+goto selectname:
+endif
+if prof1$= "2" then
+prof$= "Paladin"
+prof=2
+goto selectname:
+endif
+if prof1$= "3" then
+prof$= "Sorcerer"
+prof=3
+goto selectname:
+else
+goto selectprof:
+endif
+selectname:
+cls
+color 8,0
+print "Select a name"
+print line1$
+color 7,0
+print line2$
+color 8,0
+print line3$
+locate 2,0
+input name$
+if name$= "" then
+goto selectname:
+else
+endif
+reroll:
+cls
+color 8,0
+print stats1$
+print stats2$
+print stats3$
+print stats4$
+print stats5$
+print stats6$
+print stats7$
+print stats8$
+print stats9$
+print stats10$
+locate 1,21
+color 7,0
+print name$;
+print " the ";
+print race$;
+print " ";
+print prof$
+vit1= rnd (0)
+vit1= vit1 mod 40
+vit1= vit1+1
+if prof=1 then
+vit=vit+3
+endif
+if prof=2 then
+vit=vit+1
+endif
+if prof=3 then
+vit=vit-2
+endif
+if race= 4 then
+vit=vit-3
+endif
+if race= 5 then
+vit= vit+1
+endif
+if race=1 then
+vit=vit-1
+endif
+if race=2 then
+vit=vit+1
+endif
+if race=3 then
+vit=vit+4
+endif
+if race=99 then
+vit=vit+99
+endif
+if vit < 1 then
+vit= 1
+endif
+locate 7,25
+print vit1
+vit=vit1
+agil= rnd (0)
+agil= agil mod 15
+agil= agil+1
+if prof= 1 then
+agil= agil+2
+endif
+if prof=2 then
+agil=agil+1
+endif
+if prof=3 then
+agil=agil+4
+endif
+if race= 4 then
+agil= agil+4
+endif
+if race= 5 then
+agil= agil-1
+endif
+if race= 1 then
+agil=agil+2
+endif
+if race= 2 then
+agil=agil+3
+endif
+if race= 3 then
+agil=agil-3
+endif
+if race= 99 then
+agil=agil+99
+endif
+if agil < 1 then
+agil= 1
+endif
+locate 3,24
+print agil
+str= rnd (0)
+str= str mod 17
+str= str+1
+if prof= 1 then
+str= str+5
+endif
+if prof= 2 then
+str= str+2
+endif
+if prof= 1 then
+str= str-2
+endif
+if race= 1 then
+str=str+1
+endif
+if race= 4 then
+str= str-3
+endif
+if race= 5 then
+str= str+3
+endif
+if race=2 then
+str=str-2
+endif
+if race=3 then
+str=str+4
+endif
+if str < 1 then
+str=1
+endif
+gold= rnd (0)
+gold= gold mod 70
+gold= gold+1
+if prof= 1 then
+gold=gold-10
+endif
+if prof= 2 then
+gold= gold+10
+endif
+if prof= 3 then
+gold= gold+20
+endif
+locate 5,25
+print str
+ep= 0
+if gold < 1 then
+gold= 1
+endif
+spell$= "None"
+armor$= "A Cloth Robe"
+weapon$= "A Sharp Stick"
+locate 3,42
+print gold
+locate 7,43
+print armor$
+locate 5,44
+print weapon$
+gemstone$= "None"
+armor= 1
+mana= 0
+weapon= 1
+level= 1
+bankgold= 0
+promo4= vit1
+monsterx= 1
+reroll1:
+locate 10,0
+print "                      Do you wish to keep these stats";
+input newstat$
+newstat$=ucase$(newstat$)
+if newstat$= "Y" then
+cls
+goto game:
+else
+endif
+if newstat$= "N" then
+cls
+goto reroll:
+else
+print ""
+print "                      I do not understand this command"
+print ""
+goto reroll1:
+endif
+game:
+color 8,0
+print "     ----------------------------------------------------------------"
+print "     |                     Type ? for help                          |"
+print "     ----------------------------------------------------------------"
+color 7,0
+cd:
+loca$= "CD"
+cd2:
+color 15,0
+print "You are in the Town Square"
+color 7,0
+print "Merchants are here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+cd1:
+color 7,0
+print "Command";
+input cd$
+cd$=ucase$(cd$)
+if cd$= "S" then
+print ""
+goto bd:
+else
+endif
+if cd$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if cd$= "N" then
+print ""
+goto dd:
+else
+endif
+if cd$= "E" then
+goto mountain:
+endif
+if cd$= "HEAL" then
+heal:
+color 7,0
+print ""
+print "You need healed";
+drink= vit1-vit
+print drink;
+print " vitality points"
+print ""
+color 15,0
+print "You have ";
+print potion;
+print " healing potions"
+need= vit-vit1
+color 8,0
+print "You need to drink";
+print need;
+print " potions to heal"
+print ""
+color 7,0
+print "(REMEMBER: 1 potion=1 vitality point)"
+print ""
+color 8,0
+print "How many do you want to drink";
+input drink1
+if drink1= 666 then
+goto die:
+endif
+if potion < drink1 then
+print ""
+color 7,0
+print "You don't have that many potions"
+print ""
+goto locate:
+endif
+if potion > need then
+print ""
+color 7,0
+drink1= need
+endif
+potion=potion-drink1
+vit= vit+drink1
+if vit > vit1 then
+vit= vit1
+endif
+print ""
+color 15,0
+print "You drink down";
+print drink1;
+if drink= 1 then
+print " potion"
+print ""
+goto locate:
+endif
+print " potions"
+print ""
+goto locate:
+endif
+if cd$= "W" then
+print ""
+goto cc:
+else
+endif
+if cd$= "? EXP" then
+goto epchart:
+else
+endif
+if cd$= "?" then
+goto help:
+else
+endif
+if cd$= "EP" then
+goto expir:
+else
+endif
+if cd$= "VIT" then
+goto vital:
+else
+endif
+if cd$= "ALL" then
+goto allstats:
+else
+endif
+if cd$= "I" then
+goto inventory:
+else
+endif
+if cd$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+else
+endif
+goto loop356:
+
+duh:
+print ""
+print "Sorry, your not allowed to cast spells"
+print ""
+goto locate:
+
+spell:
+if spell$ = "Wozaru" then
+if mana < 1 then
+goto sorrymana:
+else
+mana= mana-1
+vit= vit+15
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Manuaru" then
+if mana < 2 then
+goto sorrymana:
+else
+mana= mana-2
+vit= vit+25
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Mozaru" then
+if mana < 3 then
+goto sorrymana:
+else
+mana= mana-3
+vit= vit+49
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Cannojo" then
+if mana < 5 then
+goto sorrymana:
+else
+mana= mana-5
+vit= vit+80
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Casoro" then
+if mana < 8 then
+goto sorrymana:
+else
+mana= mana-8
+vit= vit+150
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Xenwozaru" then
+if mana < 10 then
+goto sorrymana:
+else
+mana= mana-10
+vit= vit+350
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+loop356:
+if cd$= "" then
+print ""
+goto cd2:
+else
+endif
+if cd$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+cc:
+if monster= 0 then
+monster$= "Nobody"
+else
+endif
+loca$= "CC"
+cc3:
+color 15,0
+print "You are in the arena of the doomed"
+color 7,0
+print monster$;
+print " is here"
+color 8,0
+print "There is nothing on the ground"
+print ""
+cc1:
+color 7,0
+print "Command";
+input cc$
+cc$=ucase$(cc$)
+if cc$= "" then
+goto cc3:
+else
+endif
+if cc$= "HEAL" then
+goto heal:
+endif
+if cc$= "? EXP" then
+goto epchart:
+else
+endif
+if cc$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if cc$= "S" then
+goto sorrydir:
+endif
+if cc$= "A" then
+if monster= 0 then
+print ""
+print "Sorry, there is no monster in the Arena of Doom"
+print ""
+goto cc1:
+else
+print ""
+hit= rnd (0)
+hit= hit mod 10
+hit= hit+weapon
+hit= hit+str
+monstervit= monstervit-hit
+color 15,0
+print "You hit ";
+print monster$;
+print " for ";
+print hit;
+print " damage"
+if monstervit < 1 then
+goto monster1die:
+else
+endif
+endif
+attack= rnd (0)
+attack= attack mod 6
+attack= attack+1
+if attack= 6 then
+xxc= monsterst2/2
+if xxc < agil then
+color 4,0
+print ""
+print monster$;
+print "'s attack misses you"
+print ""
+goto cc1:
+endif
+endif
+if attack < 5 then
+hit= rnd (0)
+hit= hit mod 10
+hit= hit+monsterst1
+hit= hit-armor
+if hit < 1 then
+print ""
+color 4,0
+print monster$;
+print "'s attack bounces off your armor"
+print ""
+color 7,0
+goto cc1:
+else
+endif
+vit= vit-hit
+color 4,0
+print ""
+print monster$;
+print monsterat1$;
+print hit;
+print " damage"
+print ""
+color 7,0
+if vit < 1 then
+goto die:
+else
+goto cc1:
+endif
+else
+hit= rnd (0)
+hit= hit mod 10
+hit= hit+1
+hit= hit+monsterst2
+hit= hit-armor
+if hit < 2 then
+print ""
+color 4,0
+print monster$;
+print "'s attack bounced off your armor"
+print ""
+color 7,0
+print ""
+goto cc1:
+else
+endif
+vit= vit-hit
+color 4,0
+print ""
+print monster$;
+print monsterat2$;
+print hit;
+print " damage"
+print ""
+color 7,0
+if vit < 0 then
+goto die:
+else
+goto cc1:
+endif
+endif
+else
+endif
+if cc$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if cc$= "W" then
+goto sorrydir:
+endif
+if cc$= "E" then
+print ""
+goto cd:
+endif
+if cc$= "D" then
+goto sorrydir:
+endif
+if cc$= "N" then
+goto sorrydir:
+endif
+if cc$= "EP" then
+goto expir:
+endif
+if cc$= "?" then
+goto help:
+endif
+if cc$= "I" then
+goto inventory:
+endif
+if cc$= "VIT" then
+goto vital:
+endif
+if cc$= "ALL" then
+goto allstats:
+endif
+if cc$= "P ROPE" then
+monster= rnd (0)
+monster= monster mod 6
+monster= monster+1
+if monster > 0 then
+if monster = 1 then
+if level > 10 then
+monster$= "A Greater Demon"
+monstervit= 200
+monsterst1= 70
+monsterst2= 200
+monsterat1$= " hit you with his monstrous arm for"
+monsterat2$= " drained you for"
+expir= 100
+print ""
+print "A Greater Demon has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Demon"
+monstervit= 200
+monsterst1= 40
+monsterst2= 150
+monsterat1$= " hit you with his strong arm for"
+monsterat2$= " drained you for"
+expir= 20
+print ""
+print "A Demon has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Gargoyle"
+monstervit= 150
+monsterst1= 30
+monsterst2= 100
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " viciously hit you with it's claws for"
+expir= 12
+print ""
+print "A Gargoyle enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Lion"
+monstervit= 100
+monsterst1= 20
+monsterst2= 30
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " viciously bit you for"
+expir= 5
+print ""
+print "A Lion enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Panther"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " viciously bit you for"
+expir= 2
+print ""
+print "A Panther enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+if monster = 2 then
+if level > 10 then
+monster$= "A Flame Giant"
+monstervit= 175
+monsterst1= 80
+monsterst2= 230
+monsterat1$= " shoots a stream of flames at you for"
+monsterat2$= " drains you for"
+expir= 100
+print ""
+print "A Flame Giant has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Ice Giant"
+monstervit= 220
+monsterst1= 45
+monsterst2= 170
+monsterat1$= " hit you with his strong arm for"
+monsterat2$= " shoots ice shards at you for"
+expir= 20
+print ""
+print "A Ice Giant has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Stone Giant"
+monstervit= 150
+monsterst1= 25
+monsterst2= 75
+monsterat1$= " hit you with it's club for"
+monsterat2$= " throws a boulder at you for"
+expir= 12
+print ""
+print "A Stone Giant enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Giant"
+monstervit= 100
+monsterst1= 15
+monsterst2= 35
+monsterat1$= " hit you with it's club for"
+monsterat2$= " viciously hit you with it's club for"
+expir= 5
+print ""
+print "A Giant enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Cave Bear"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " viciously bit you for"
+expir= 2
+print ""
+print "A Cave Bear enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+if monster = 3 then
+if level > 10 then
+monster$= "A Sorcerer"
+monstervit= 100
+monsterst1= 10
+monsterst2= 350
+monsterat1$= " hit you with his cursed staff fir"
+monsterat2$= " drained you for"
+expir= 100
+print ""
+print "A Sorcerer has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Afreet"
+monstervit= 175
+monsterst1= 35
+monsterst2= 90
+monsterat1$= " hit you with his Glowing Staff for"
+monsterat2$= " hit you with it's Glowing Sword for"
+expir= 20
+print ""
+print "A Afreet has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Giant Phantom"
+monstervit= 150
+monsterst1= 35
+monsterst2= 75
+monsterat1$= " shoots a small bolt of lightening at you for"
+monsterat2$= " shoots a large bolt of lightening at you for"
+expir= 12
+print ""
+print "A Giant Phantom enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Goul"
+monstervit= 100
+monsterst1= 25
+monsterst2= 50
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " shoots a small bolt of lightening at you for"
+expir= 5
+print ""
+print "A Goul enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Barbarian"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " hit you with it's club for"
+monsterat2$= " viciously hit you with it's sword for"
+expir= 2
+print ""
+print "A Barbarian enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+if monster = 4 then
+if level > 10 then
+monster$= "A Apocalypse"
+monstervit= 300
+monsterst1= 80
+monsterst2= 400
+monsterat1$= " minorly drains you for"
+monsterat2$= " drained you for"
+expir= 100
+print ""
+print "A Apocalypse has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Chimera"
+monstervit= 200
+monsterst1= 50
+monsterst2= 120
+monsterat1$= " hit you with it's claws for"
+monsterat2$= " breaths flames on you for"
+expir= 20
+print ""
+print "A Chimera has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Two Headed Cyclops"
+monstervit= 150
+monsterst1= 30
+monsterst2= 40
+monsterat1$= " hit you with it's huge club for"
+monsterat2$= " picked you up and threw you against the wall for"
+expir= 12
+print ""
+print "A Two Headed Cyclops enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Cyclops"
+monstervit= 100
+monsterst1= 20
+monsterst2= 30
+monsterat1$= " hit you with it's club for"
+monsterat2$= " threw you against the wall for"
+expir= 5
+print ""
+print "A Cyclops enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Minotaur"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " hit you with it's battle ax for"
+monsterat2$= " viciously hit you with it's battle ax for"
+expir= 3
+print ""
+print "A Minotaur enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+if monster = 5 then
+if level > 10 then
+monster$= "A Vampire Master"
+monstervit= 150
+monsterst1= 100
+monsterst2= 500
+monsterat1$= " bites you for"
+monsterat2$= " drains your life for"
+expir= 100
+print ""
+print "A Vampire Master has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Vampire"
+monstervit= 100
+monsterst1= 30
+monsterst2= 80
+monsterat1$= " slashes you with it's claws for"
+monsterat2$= " drains your blood for"
+expir= 20
+print ""
+print "A Vampire has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Vampire Apprintice"
+monstervit= 75
+monsterst1= 20
+monsterst2= 50
+monsterat1$= " gashes you with it's claws for"
+monsterat2$= " sucks your blood for"
+expir= 12
+print ""
+print "A Vampire Apprintice enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Vampire Bat"
+monstervit= 60
+monsterst1= 5
+monsterst2= 30
+monsterat1$= " screeches at you for"
+monsterat2$= " bits you with it's fangs for"
+expir= 5
+print ""
+print "A Vampire Bat enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Wyrm"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " nocks you on the ground for"
+monsterat2$= " bites you with it's fangs for"
+expir= 4
+print ""
+print "A Wyrm enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+if monster = 6 then
+if level > 10 then
+monster$= "A Zombie Master"
+monstervit= 120
+monsterst1= 200
+monsterst2= 350
+monsterat1$= " hit you with his cursed staff for"
+monsterat2$= " casts a spell on you for"
+expir= 100
+print ""
+print "A Zombie Master has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 7 then
+monster$= "A Scathe Zombie"
+monstervit= 175
+monsterst1= 35
+monsterst2= 90
+monsterat1$= " hit you for"
+monsterat2$= " hit you with it's rusty sword for"
+expir= 20
+print ""
+print "A Scathe Zombie has entered the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 5 then
+monster$= "A Frozen Shade"
+monstervit= 200
+monsterst1= 30
+monsterst2= 125
+monsterat1$= " shoots a small bolt of energy at you for"
+monsterat2$= " shoots an energy storm at you for at you for"
+expir= 20
+print ""
+print "A Frozen Shade enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 3 then
+monster$= "A Giant"
+monstervit= 100
+monsterst1= 25
+monsterst2= 50
+monsterat1$= " hit you with it's club for"
+monsterat2$= " steps on you for"
+expir= 5
+print ""
+print "A Giant enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+if level > 0 then
+monster$= "A Dark Warrier"
+monstervit= 40
+monsterst1= 10
+monsterst2= 15
+monsterat1$= " hit you with his dagger for"
+monsterat2$= " viciously hit you with his sword for"
+expir= 5
+print ""
+print "A Dark Warrier enters the Arena of Doom"
+print ""
+goto cc1:
+else
+endif
+else
+endif
+else
+endif
+endif
+if cc$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+monster1die:
+color 7,0
+print ""
+print monster$;
+print " falls to the ground lifeless"
+print ""
+gf= rnd (0)
+gf= gf mod 10
+goldfind= monsterst2/2
+goldfind= goldfind+expir
+goldfind= goldfind+gf
+gold= gold+goldfind
+color 8,0
+print "You find";
+color 15,0
+print goldfind;
+color 8,0
+print " while searching the area"
+print ""
+color 7,0
+ep= ep+expir
+if ep < 0 then
+ep= 31500
+else
+endif
+monster= 0
+monster$= "Nobody"
+goto cc1:
+
+bd:
+loca$= "BD"
+bd2:
+color 15,0
+print "You are on a path"
+color 7,0
+print "There is nobody here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+bd1:
+color 7,0
+print "Command";
+input bd$
+bd$=ucase$(bd$)
+if bd$= "" then
+goto bd2:
+else
+endif
+if bd$= "S" then
+print ""
+goto ad:
+endif
+if bd$= "N" then
+print ""
+goto cd:
+endif
+if bd$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if bd$= "W" then
+goto sorrydir:
+endif
+if bd$= "E" then
+goto sorrydir:
+endif
+if bd$= "EP" then
+goto expir:
+endif
+if bd$= "? EXP" then
+goto epchart:
+endif
+if bd$= "HEAL" then
+goto heal:
+endif
+if bd$= "VIT" then
+goto vital:
+endif
+if bd$= "?" then
+goto help:
+endif
+if bd$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if bd$= "I" then
+goto inventory:
+endif
+if bd$= "ALL" then
+print ""
+goto allstats:
+else
+endif
+if bd$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+expir:
+color 7,0
+print ""
+print "Level = ";
+print level
+print "Experience Points = ";
+print ep
+print "Gemstone = ";
+print gemstone$
+print ""
+goto locate:
+vital:
+print ""
+print "Vitality = ";
+print vit;
+print "/";
+print vit1
+print ""
+goto locate:
+help:
+print ""
+color 7,0
+print help0$
+print help1$
+print help2$
+print help3$
+print help4$
+print help5$
+print help6$
+print help7$
+print help8$
+print help9$
+print help10$
+print help11$
+print help12$
+print help13$
+print help14$
+print help15$
+print help16$
+print help17$
+print help18$
+print help19$
+print help20$
+print help21$
+print help22$
+print "                     Press any key to continue"
+loop788: x$= inkey$
+if x$= "" then loop788:
+color 7,0
+goto locate:
+locate:
+if loca$= "CC" then
+goto cc1:
+endif
+if loca$= "CD" then
+goto cd1:
+endif
+if loca$= "BD" then
+goto bd1:
+endif
+if loca$= "BANK" then
+goto bank1:
+endif
+if loca$= "AD" then
+goto ad1:
+endif
+if loca$= "AC" then
+goto ac1:
+endif
+if loca$= "AE" then
+goto ae1:
+endif
+if loca$= "DD" then
+goto dd1:
+endif
+if loca$= "ED" then
+goto ed1:
+endif
+if loca$= "EC" then
+goto ec1:
+endif
+if loca$= "EE" then
+goto ee1:
+endif
+
+locate2:
+if loca$= "CC" then
+goto cc:
+endif
+if loca$= "CD" then
+goto cd:
+endif
+if loca$= "BD" then
+goto bd:
+endif
+if loca$= "BANK" then
+goto bank:
+endif
+if loca$= "AD" then
+goto ad:
+endif
+if loca$= "AC" then
+goto ac:
+endif
+if loca$= "AE" then
+goto ae:
+endif
+if loca$= "DD" then
+goto dd:
+endif
+if loca$= "ED" then
+goto ed:
+endif
+if loca$= "EC" then
+goto ec:
+endif
+if loca$= "EE" then
+goto ee:
+endif
+
+
+epchart:
+color 8,0
+print expir0$
+print expir1$
+print expir2$
+print expir3$
+print expir4$
+print expir5$
+print expir6$
+print expir7$
+print expir8$
+print expir9$
+print expir10$
+print expir11$
+print expir12$
+print expir13$
+print expir14$
+print expir15$
+print expir16$
+color 7,0
+goto locate:
+
+allstats:
+color 7,0
+print ""
+print name$;
+print " the ";
+print prof$
+print ""
+print "You Vitality = ";
+print vit;
+print "/";
+print vit1
+print "Your Strength = ";
+print str
+print "Your Agility =  ";
+print  agil
+print "Your Armor  = ";
+print armor$
+print "Your Weapon = ";
+print weapon$
+print "Your EP = ";
+print ep
+print "Your Level = ";
+print level
+if prof= 1 then
+print ""
+goto locate:
+endif
+print "Your Spell = ";
+print spell$
+print "Your Mana = ";
+print mana
+print ""
+goto locate:
+
+inventory:
+color 7,0
+print ""
+print "Gold= ";
+print gold
+print "Healing Potions= ";
+print potion
+print ""
+goto locate:
+
+ad:
+loca$= "AD"
+ad2:
+color 15,0
+print "You are in the Southern Trade Center"
+color 7,0
+print "There is nobody here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+ad1:
+color 7,0
+print "Command";
+input ad$
+ad$=ucase$(ad$)
+if ad$= "" then
+goto ad2:
+endif
+if ad$= "HEAL" then
+goto heal:
+endif
+if ad$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ad$= "? EXP" then
+goto epchart:
+endif
+if ad$= "C" then
+if prof=1 then
+goto duh:
+endif
+goto spell:
+endif
+if ad$= "W" then
+print ""
+goto ac:
+endif
+if ad$= "E" then
+print ""
+goto ae:
+endif
+if ad$= "N" then
+print ""
+goto bd:
+endif
+if ad$= "S" then
+print ""
+goto forest:
+endif
+if ad$= "EP" then
+goto expir:
+endif
+if ad$= "VIT" then
+goto vital:
+endif
+if ad$= "?" then
+goto help:
+endif
+if ad$= "ALL" then
+goto allstats:
+endif
+if ad$= "I" then
+goto inventory:
+endif
+if ad$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+ae:
+loca$= "AE"
+ae2:
+color 15,0
+print "You are in a Weapon Shop"
+color 7,0
+print "The Shop keeper is here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+ae1:
+color 7,0
+print "Command";
+input ae$
+ae$=ucase$(ae$)
+if ae$= "" then
+goto ae2:
+endif
+if ae$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if ae$= "ALL" then
+goto allstats:
+endif
+if ae$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ae$= "? EXP" then
+goto epchart:
+endif
+if ae$= "HEAL" then
+goto heal:
+endif
+if ae$= "W" then
+print ""
+goto ad:
+endif
+if ae$= "E" then
+goto sorrydir:
+endif
+if ae$= "N" then
+goto sorrydir:
+endif
+if ae$= "S" then
+goto sorrydir:
+endif
+if ae$= "EP" then
+goto expir:
+else
+endif
+if ae$= "?" then
+goto help:
+endif
+if ae$= "I" then
+goto inventory:
+endif
+if ae$= "VIT" then
+goto vital:
+endif
+if ae$= "ALL" then
+goto allstats:
+else
+endif
+if ae$= "LS I" then
+print ""
+color 8,0
+if prof= 1 then
+print weapn1$
+print weapn2$
+print weapn3$
+print weapn4$
+print weapn5$
+print weapn6$
+print weapn7$
+print weapn8$
+print weapn9$
+print weapn10$
+print weapn11$
+print weapn12$
+print ""
+color 7,0
+goto ae1:
+endif
+if prof= 2 then
+print weapn13$
+print weapn14$
+print weapn15$
+print weapn16$
+print weapn17$
+print weapn18$
+print weapn19$
+print weapn20$
+print weapn21$
+print weapn22$
+print weapn23$
+print weapn24$
+print ""
+color 7,0
+goto ae1:
+endif
+if prof= 3 then
+print weapn25$
+print weapn26$
+print weapn27$
+print weapn28$
+print weapn29$
+print weapn30$
+print weapn31$
+print weapn32$
+print weapn33$
+print weapn34$
+print weapn35$
+print weapn36$
+print ""
+color 7,0
+goto ae1:
+endif
+else
+endif
+if ae$= "B" then
+print ""
+color 8,0
+if prof= 1 then
+print weapn1$
+print weapn2$
+print weapn3$
+print weapn4$
+print weapn5$
+print weapn6$
+print weapn7$
+print weapn8$
+print weapn9$
+print weapn10$
+print weapn11$
+print weapn12$
+goto buyweap:
+endif
+if prof= 2 then
+print weapn13$
+print weapn14$
+print weapn15$
+print weapn16$
+print weapn17$
+print weapn18$
+print weapn19$
+print weapn20$
+print weapn21$
+print weapn22$
+print weapn23$
+print weapn24$
+goto buyweap:
+endif
+if prof=3 then
+print weapn25$
+print weapn26$
+print weapn27$
+print weapn28$
+print weapn29$
+print weapn30$
+print weapn31$
+print weapn32$
+print weapn33$
+print weapn34$
+print weapn35$
+print weapn36$
+goto buyweap:
+endif
+buyweap:
+color 7,0
+print ""
+print "Which # weapon do you want to buy";
+input weap$
+weap$=ucase$(weap$)
+if weap$= "1" then
+if gold > 49 then
+if prof=1 then
+weapon$= "A Wooden Dagger"
+weapon= 2
+endif
+if prof= 2 then
+weapon$= "A Short Sword"
+weapon= 2
+endif
+if prof= 3 then
+weapon$= "A Short Staff"
+weapon= 1
+endif
+print ""
+print "You bought a ";
+print weapon$;
+print " from the shop keeper"
+print ""
+gold= gold-50
+goto ae:
+else
+endif
+if gold < 50 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+if weap$= "2" then
+if level < 3 then
+print ""
+goto sorrylev:
+endif
+if gold > 299 then
+if prof= 1 then
+weapon$= "A Steel Sword"
+weapon= 5
+endif
+if prof= 2 then
+weapon$= "A Long Sword"
+weapon= 4
+endif
+if prof= 3 then
+weapon$= "A Long Staff"
+weapon=3
+endif
+print ""
+print "You bought a ";
+print weapon$;
+print " from the shop keeper"
+gold= gold-300
+goto locate:
+else
+endif
+if gold < 300 then
+goto sorryg:
+else
+endif
+else
+endif
+if weap$= "3" then
+if level < 5 then
+print ""
+goto sorrylev:
+endif
+if gold > 1200 then
+if prof= 1 then
+weapon$= "A Long Sword"
+weapon=7
+endif
+if prof= 2 then
+weapon$= "A Blessed Long Sword"
+weapon=8
+endif
+if prof= 3 then
+weapon$= "A Steel Tipped Staff"
+weapon= 5
+endif
+print ""
+print "You bought a ";
+print weapon$;
+print " from the shop keeper"
+gold= gold-1200
+print ""
+goto ae1:
+else
+endif
+else
+endif
+if gold < 1200 then
+print ""
+goto sorryg:
+else
+endif
+if weap$= "4" then
+if level < 7 then
+print ""
+goto sorrylev:
+else
+endif
+if level > 6 then
+if prof= 1 then
+weapon$= "A Warrior Sword"
+weapon= 10
+endif
+if prof= 2 then
+weapon$= "A Holly Sword"
+weapon= 11
+endif
+if prof= 3 then
+weapon$= "A Black Staff"
+weapon= 8
+endif
+print ""
+print "You bought a ";
+print weapon$;
+print " from the shop keeper"
+gold= gold-6000
+print ""
+goto ae1:
+else
+endif
+if gold < 6000 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+if weap$= "5" then
+if level < 9 then
+print ""
+goto sorrylev:
+else
+endif
+if level > 8 then
+if prof= 1 then
+weapon$= "A Death Lord Sword"
+weapon= 13
+endif
+if prof= 2 then
+weapon$= "Blessed Holly Sword"
+weapon= 12
+endif
+if prof= 3 then
+weapon$= "Cursed Black Staff"
+weapon= 10
+endif
+print ""
+print "You bought a ";
+print weapon$;
+print " from the shop keeper"
+gold= gold-8500
+print ""
+goto ae1:
+else
+endif
+if gold < 8500 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+else
+endif
+if ae$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+sorrylev:
+color 7,0
+print ""
+print "Sorry you are not a high enough level to yield this item"
+print ""
+goto locate:
+
+sorryg:
+color 7,0
+print ""
+print "Sorry you don't have enough gold to buy this item"
+print ""
+goto locate:
+
+sorrydir:
+color 7,0
+print ""
+print "Sorry there is no exit in that direction"
+print ""
+goto locate:
+
+dd:
+loca$= "DD"
+dd2:
+color 15,0
+print "You are on a Path"
+color 7,0
+print "There is Nobody there"
+color 8,0
+print "There is nothing on the ground"
+print ""
+dd1:
+color 7,0
+print "Command";
+input dd$
+dd$=ucase$(dd$)
+if dd$= "" then
+goto dd2:
+else
+endif
+if dd$= "N" then
+print ""
+goto ed:
+else
+endif
+if dd$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+else
+endif
+if dd$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if dd$= "S" then
+print ""
+goto cd:
+else
+endif
+if dd$= "HEAL" then
+goto heal:
+endif
+if dd$= "? EXP" then
+goto epchart:
+else
+endif
+if dd$= "E" then
+goto sorrydir:
+else
+endif
+if dd$= "W" then
+goto sorrydir:
+else
+endif
+if dd$= "VIT" then
+goto vital:
+else
+endif
+if dd$= "?" then
+goto help:
+else
+endif
+if dd$= "EP" then
+goto expir:
+else
+endif
+if dd$= "I" then
+goto inventory:
+else
+endif
+if dd$= "ALL" then
+goto allstats:
+else
+endif
+if dd$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+ed:
+loca$= "ED"
+ed2:
+color 15,0
+print "You are in the Northern Trade Center"
+color 7,0
+print "Merchants are here"
+color 8,0
+print "Nothing is on the ground"
+print ""
+ed1:
+color 7,0
+print "Command";
+input ed$
+ed$=ucase$(ed$)
+if ed$= "" then
+goto ed2:
+else
+endif
+if ed$= "ALL" then
+goto allstats:
+else
+endif
+if ed$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ed$= "C" then
+goto spell:
+else
+endif
+if ed$= "N" then
+goto bank:
+else
+endif
+if ed$= "EP" then
+goto expir:
+else
+endif
+if ed$= "HEAL" then
+goto heal:
+endif
+if ed$= "VIT" then
+goto vital:
+else
+endif
+if ed$= "I" then
+goto inventory:
+else
+endif
+if ed$= "?" then
+goto help:
+else
+endif
+if ed$= "S" then
+goto dd:
+else
+endif
+if ed$= "? EXP" then
+goto epchart:
+else
+endif
+if ed$= "W" then
+goto ec:
+else
+endif
+if ed$= "E" then
+goto ee:
+else
+endif
+if ed$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+nocommand:
+color 7,0
+print ""
+print "Sorry I do not understand this command"
+print ""
+goto locate:
+
+ec:
+loca$= "EC"
+ec2:
+color 15,0
+print "You are in the pub"
+color 7,0
+print "Drunken men are here"
+color 8,0
+print "Nothing is on the floor"
+print ""
+ec1:
+color 7,0
+print "Command";
+input ec$
+ec$=ucase$(ec$)
+if ec$= "ALL" then
+goto allstats:
+else
+endif
+if ec$= "I" then
+goto inventory:
+else
+endif
+if ec$= "?" then
+goto help:
+else
+endif
+if ec$= "VIT" then
+goto vital:
+else
+endif
+if ec$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ec$= "EP" then
+goto expir:
+else
+endif
+if ec$= "E" then
+print ""
+goto ed:
+else
+endif
+if ec$= "N" then
+goto sorrydir:
+else
+endif
+if ec$= "HEAL" then
+goto heal:
+endif
+if ec$= "? EXP" then
+goto epchart:
+else
+endif
+if ec$= "W" then
+goto sorrydir:
+else
+endif
+if ec$= "LS I" then
+color 8,0
+print pub1$
+print pub2$
+print pub3$
+print pub4$
+print pub5$
+print pub6$
+print pub7$
+print pub8$
+print pub9$
+color 7,0
+goto ec1:
+else
+endif
+if ec$= "C" then
+goto spell:
+else
+endif
+if ec$= "GAMBLE" then
+if reg= 1 then
+goto casino:
+else
+print ""
+print "This is an unregistered version of Vile 1.0.3b (Build 003)"
+print ""
+print "If you would like the Casino Option, please register"
+print ""
+goto ec1:
+endif
+endif
+if ec$= "" then
+goto ec2:
+else
+endif
+if ec$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+casino:
+print ""
+print "The Casino is not included in this package. When you register you will"
+print "recieve a disk with all the files you need. So please register."
+print ""
+goto ec1:
+
+sorryitem:
+print ""
+print "Sorry you may not carry any more of that item"
+print ""
+goto locate:
+bitem:
+print ""
+print "You just bought a";
+print item$
+print ""
+goto locate:
+sorrynoitem:
+print ""
+print "Sorry you don't have any of that item"
+print ""
+goto locate:
+
+
+bank:
+loca$= "BANK"
+bank2:
+color 15,0
+print "You are in the Bank"
+color 7,0
+print "Tellers are Here"
+color 8,0
+print "Nothing is on the floor"
+bank1:
+color 7,0
+print ""
+print "Command";
+input bank$
+bank$=ucase$(bank$)
+if bank$= "DE" then
+print ""
+color 8,0
+print "You have ";
+color 7,0
+print gold;
+color 8,0
+print " gold"
+print ""
+color 7,0
+print "How much gold would you like to deposit in the bank";
+input deposit
+if gold < deposit then
+print ""
+color 8,0
+print "Sorry, you don't have that much gold"
+print ""
+color 7,0
+goto bank1:
+else
+endif
+bankgold= bankgold+deposit
+if bankgold > 31500 then
+print ""
+print "Sorry, your account is maxed out"
+print ""
+bankgold= 31500
+else
+endif
+print ""
+color 7,0
+print "You deposit";
+print deposit;
+print " in your account"
+print ""
+gold=gold-deposit
+if reg < 1 then
+if bankgold > 500 then
+print "Before your transaction could finish a clerk runs up and tells you:"
+print ""
+print "I'm sorry, but until you register, you are only able to have 500 gold in"
+print "the bank"
+print ""
+print "Here is your gold back. Please deposit the right amont please."
+print ""
+bakgold= bankgold - deposit
+gold= gold+deposit
+endif
+endif
+goto bank1:
+else
+endif
+if reg = 1 then
+if bankgold > 5000 then
+print "Before your transaction could finish a clerk runs up and tells you:"
+print ""
+print "I'm sorry, but until you register to level 2, you are only able to have" 
+print "5000 gold in the bank"
+print ""
+print "Here is your gold back. Please deposit the right amont please."
+print ""
+bakgold= bankgold - deposit
+gold= gold+deposit
+endif
+endif
+goto bank1:
+
+if bank$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if bank$= "HEAL" then
+goto heal:
+endif
+if bank$= "EP" then
+goto expir:
+else
+endif
+if bank$= "BA" then
+print ""
+color 8,0
+print "You have";
+color 7,0
+print bankgold;
+color 8,0
+print " gold in your account"
+print ""
+goto bank1:
+else
+endif
+if bank$= "WI" then
+print ""
+color 8,0
+print "You have";
+color 7,0
+print bankgold;
+color 8,0
+print " in your account"
+print ""
+color 7,0
+print "How much will you be withdrawing";
+input withdraw
+if withdraw > bankgold then
+print ""
+color 8,0
+print "Sorry you don't have that much gold in your account"
+print ""
+goto bank1:
+else
+endif
+cls
+print ""
+color 8,0
+print "You want to withdraw";
+color 7,8
+print withdraw;
+color 8,0
+print " from your account"
+print ""
+color 7,0
+print "Is this correct (Y/N)";
+input correct$
+correct$=ucase$(correct$)
+if correct$= "Y" then
+print ""
+color 8,0
+print "You withdraw";
+color 7,0
+print withdraw;
+color 8,0
+print " from your account"
+bankgold= bankgold-withdraw
+print ""
+print "You have";
+color 7,0
+print bankgold;
+color 8,0
+print " left in your account"
+gold= gold+withdraw
+print ""
+color 7,0
+goto bank1:
+else
+endif
+if correct$= "N" then
+cls
+goto bank2:
+else
+endif
+else
+endif
+if bank$= "S" then
+goto ed:
+else
+endif
+if bank$= "" then
+goto bank2:
+else
+endif
+if bank$= "?" then
+goto help:
+else
+endif
+if bank$= "? EXP" then
+goto epchart:
+else
+endif
+if bank$= "C" then
+goto spell:
+else
+endif
+if bank$= "VIT" then
+goto vital:
+else
+endif
+if bank$= "ALL" then
+goto allstats:
+else
+endif
+if bank$= "I" then
+goto inventory:
+else
+endif
+if bank$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+ee:
+loca$= "EE"
+ee2:
+color 15,0
+print "You are in the Temple"
+color 7,0
+print "There are Priests here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+ee1:
+color 7,0
+print "Command";
+input ee$
+ee$=ucase$(ee$)
+if ee$= "EP" then
+goto expir:
+else
+endif
+if ee$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ee$= "W" then
+goto ed:
+else
+endif
+if ee$= "B POTION" then
+print ""
+color 8,0
+print "You have ";
+color 7,0
+print gold;
+color 8,0
+print " Gold"
+print ""
+print "You can afford ";
+pot= gold/2
+color 7,0
+print pot;
+color 8,0
+print " healing potions"
+print ""
+print "How many do you want ";
+input want
+want1= want*2
+if gold < want1 then
+print ""
+goto sorryg:
+endif
+potion= potion+want
+gold= gold-want1
+print ""
+print "You bought ";
+color 7,0
+print want;
+color 8,0
+print " potion";
+if want > 1 then
+print "s"
+endif
+print ""
+color 7,0
+print ""
+goto ee1:
+endif
+if ee$= "" then
+goto ee2:
+else
+endif
+if ee$= "HEAL" then
+goto heal:
+endif
+if ee$= "? EXP" then
+goto epchart:
+else
+endif
+if ee$= "LS I" then
+print ""
+color 8,0
+print temple1$
+print temple2$
+print temple3$
+print temple4$
+print temple5$
+print temple6$
+print temple7$
+print temple8$
+print temple9$
+print temple10$
+print temple11$
+print temple12$
+color 7,0
+goto ee1:
+else
+endif
+if ee$= "B PROMO" then
+if reg < 2 then
+goto promoXXX:
+else
+print ""
+print "Sorry, but until you register Vile 1.0.3b (Build 003), you may not promo"
+print ""
+print "Please read the VILE.WRI file for registration information"
+print ""
+goto ee1:
+endif
+promoXXX:
+if gold < 5000 then
+goto sorryg:
+else
+endif
+if level= 10 then
+level= 1
+gold= gold-5000
+ep= 0
+weapon= 1
+weapon$= "A Steel Dagger"
+armor= 1
+armor$= "A Leather Cloak"
+print ""
+print "You lie on the alter as the Priests bring you to a higher level of life."
+print ""
+if gemstone$= "Black" then
+level= 1
+gold= 1
+ep= 0
+slot= 0
+horseplay=0
+weapon= 1
+weapon$= "A Steel Dagger"
+armor= 1
+aramor$= "A Leather Cloak"
+print ""
+print "You cannot be made any more Holly, but the Priests so what they can do"
+print ""
+else
+endif
+if gemstone$= "Violet" then
+gemstone$= "Black"
+gem=7
+print ""
+print "The Priests make a Black Gemstone embedded over your heart."
+print "They can no longer bring you any higher, because you have achieved"
+print "the highest level of being."
+print ""
+else
+endif
+if gemstone$= "Blue" then
+gemstone$= "Violet"
+gem=6
+else
+endif
+if gemstone$= "Green" then
+gemstone$= "Blue"
+gem=5
+else
+endif
+if gemstone$= "Yellow" then
+gemstone$= "Green"
+gem=3
+else
+endif
+if gemstone$= "White" then
+gemstone$= "Yellow"
+gem = 2
+else
+endif
+if gemstone$= "None" then
+gemstone$= "White"
+gem=1
+else
+endif
+promo1= rnd (0)
+promo1= promo1 mod 13
+promo2= rnd (0)
+promo2= promo2 mod 8
+promo3= rnd (0)
+promo3= promo3 mod 10
+str= str+promo1
+agil= agil+promo2
+promo5= promo4
+promo5= promo5+promo3
+vit1=promo5
+vit= vit1
+spell$= "Wozaru"
+goto ee1:
+else
+print ""
+print "Sorry, you are not high enough level to buy a promotion"
+print ""
+goto ee1:
+endif
+else
+endif
+if ee$= "B HEALING" then
+costheal= vit1/10
+if gold < costheal then
+goto sorryserg:
+else
+endif
+vit= vit1
+gold= gold-costheal
+print ""
+print "The Priests lie you on the Alter and heal your wounds for";
+print costheal;
+print " gold"
+print ""
+goto ee1:
+else
+endif
+if ee$= "E" then
+goto sorrydir:
+else
+endif
+if ee$= "?" then
+goto help:
+else
+endif
+if ee$= "I" then
+goto inventory:
+else
+endif
+if ee$= "VIT" then
+goto vital:
+else
+endif
+if ee$= "ALL" then
+goto allstats:
+else
+endif
+if ee$= "N" then
+goto sorrydir:
+else
+endif
+if ee$= "LS SP" then
+color 8,0
+print spells1$
+print spells2$
+print spells3$
+print spells4$
+print spells5$
+print spells6$
+print spells7$
+print spells8$
+print spells9$
+print spells10$
+print spells11$
+print spells12$
+print spells13$
+print ""
+color 7,0
+goto ee1:
+else
+endif
+if ee$= "B SP" then
+if prof= 1 then
+print ""
+print "Sorry, you are not allowed to have spells"
+print ""
+goto locate:
+endif
+color 8,0
+print ""
+print spells1$
+print spells2$
+print spells3$
+print spells4$
+print spells5$
+print spells6$
+print spells7$
+print spells8$
+print spells9$
+print spells10$
+print spells11$
+print spells12$
+print spells13$
+print ""
+color 7,0
+print ""
+print "Which spell would you like to buy (number)";
+input spbuy$
+spbuy$=ucase$(spbuy$)
+if spbuy$= "1" then
+if gold < 20 then
+goto sorryg:
+else
+endif
+gold= gold-20
+spell$= "Wozaru"
+goto bspell:
+else
+endif
+if spbuy$= "2" then
+if level < 2 then
+goto levspell:
+else
+endif
+if gold < 60 then
+goto sorryg:
+else
+endif
+gold= gold-60
+spell$= "Manuaru"
+goto bspell:
+else
+endif
+if spbuy$= "3" then
+if level < 4 then
+goto levspell:
+else
+endif
+if gold < 100 then
+goto sorryg:
+else
+endif
+gold= gold-100
+spell$= "Mozaru"
+goto bspell:
+else
+endif
+if spbuy$= "4" then
+if reg= 1 then
+goto cannojo666:
+else
+print ""
+print "Sorry, you are not allowed to have this until you register Vile 1.0.3b"
+print "(Build 003)"
+print ""
+print "Please read the VILE.WRI file for information"
+print ""
+goto ee1:
+endif
+cannojo666:
+if level < 6 then
+goto levspell:
+else
+endif
+if gold < 250 then
+goto sorryg:
+else
+endif
+gold= gold-250
+spell$= "Cannojo"
+goto bspell:
+else
+endif
+if spbuy$= "5" then
+if reg= 1 then
+goto casoro:
+else
+print ""
+print "Sorry, you are not allowed to have this until you register Vile 1.0.3b"
+print "(Build 003)"
+print ""
+print "Please read the VILE.WRI file for information."
+print ""
+goto ee1:
+endif
+casoro:
+if level < 9 then
+goto levspell:
+else
+endif
+if gold < 350 then
+goto sorryg:
+else
+endif
+gold= gold-350
+spell$= "Casoro"
+goto bspell:
+else
+endif
+if spbuy$= "6" then
+if reg= 1 then
+goto xenwoza:
+else
+print ""
+print "Sorry, you are not allowed to have this until you register Vile 1.0.3b"
+print "(Build 003)"
+print ""
+print "Please read the VILE.WRI file for information"
+print ""
+goto ee1:
+endif
+xenwoza:
+if level < 10 then
+goto levspell:
+else
+endif
+if gold < 600 then
+goto sorryg:
+else
+endif
+gold= gold-600
+spell$= "Xenwozaru"
+goto bspell:
+else
+print ""
+print "Unknown Spell"
+print ""
+goto ee1:
+endif
+else
+endif
+if ee$= "B LEVEL" then
+if level= 1 then
+if ep > 56 then
+if gold > 9 then
+horse= 0
+slot= 0
+vit1= vit1+promo4
+vit= vit+promo4
+agil= agil+1
+level= level+1
+gold= gold-10
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 2 then
+if ep > 130 then
+if gold > 14 then
+horse= 0
+slot= 0
+vit1= vit1+promo4
+vot= vit+promo4
+level= level+1
+str= str+1
+gold= gold-15
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 3 then
+if ep > 268 then
+if gold > 19 then
+horse= 0
+slot= 0
+vit1=vit1+promo4
+vit= vit+promo4
+level= level+1
+gold= gold-20
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 4 then
+if ep > 500 then
+if gold > 24 then
+horse= 0
+slot= 0
+agil= agil+1
+level= level+1
+vit1= vit1+promo4
+vit= vit+promo4
+gold= gold-25
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 5 then
+if ep > 1200 then
+if gold > 29 then
+horse= 0
+slot= 0
+level= level+1
+vit1= vit1+promo4
+vit= vit+promo4
+gold= gold-30
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 6 then
+if ep > 2000 then
+if gold > 34 then
+horse= 0
+slot= 0
+vit1= vit1+promo4
+vit= vit+promo4
+level= level+1
+gold= gold-35
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 7 then
+if ep > 3000 then
+if gold > 39 then
+horse= 0
+slot= 0
+vit1=vit1+promo4
+vit= vit+promo4
+level= level+1
+str= str+1
+gold= gold-40
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 8 then
+if ep > 4000 then
+if gold > 44 then
+horse= 0
+slot= 0
+str= str+1
+agil= agil+1
+vit1= vit1+promo4
+vit= vit+promo4
+level= level+1
+gold= gold-45
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 9 then
+if ep > 6500 then
+if gold > 49 then
+horse= 0
+slot= 0
+level= level+1
+agil= agil+2
+vit1= vit1+promo4
+vit= vit+promo4
+gold= gold-50
+print ""
+goto leveling:
+else
+endif
+else
+goto sorryserg:
+endif
+else
+endif
+if level= 10 then
+horse= 0
+slot= 0
+print ""
+print "Sorry you are to high of a level to level again."
+print ""
+goto ee1:
+else
+print ""
+print "Sorry, you don't have enough experience for next level"
+print ""
+goto ee1:
+endif
+else
+endif
+if ee$= "B MANA" then
+if prof= 1 then
+print ""
+print "Sorry, but your profession is not allowed to have mana or spells"
+print ""
+goto ee1:
+else
+endif
+print ""
+print "Mana costs 1 gold per charge"
+print ""
+print "You have";
+print gold;
+print " gold."
+print ""
+print "How much mana do you want ";
+input want
+if gold < want then
+print ""
+print "Sorry, you don't have enough gold"
+print ""
+goto ee1:
+else
+print ""
+color 8,0
+print "You bought ";
+color 7,0
+print want;
+color 8,0
+print " mana"
+print ""
+color 7,0
+gold=gold-want
+mana=mana+want
+goto ee1:
+endif
+else
+endif
+if ee$= "C" then
+goto spell:
+else
+endif
+if ee$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+sorrymana:
+print ""
+print "Sorry you don't have enough mana to cast your healing spell";
+print ""
+goto locate:
+sorryserg:
+print ""
+print "Sorry you don't have enough gold to buy this service"
+print ""
+goto locate:
+bspell:
+print ""
+print "You bought ";
+print spell$
+print ""
+goto ee1:
+sorrysp:
+print ""
+print "Sorry you don't possess this spell"
+print ""
+goto locate:
+nosp:
+print ""
+print "Sorry you don't possess a healing spell"
+print ""
+goto locate:
+leveling:
+print ""
+print "After many hours of learning and training you feel smarter and stronger" 
+print ""
+goto ee1:
+castsp:
+print ""
+print "As you cast ";
+print spell$;
+print " you feel your body heal"
+print ""
+goto locate:
+levspell:
+print ""
+print "Your are not experienced enough to buy this spell"
+print ""
+goto ee1:
+ac:
+loca$= "AC"
+ac2:
+color 15,0
+print "Your are in the Armor Shop"
+color 7,0
+print "The Shop keeper is here"
+color 8,0
+print "There is nothing on the floor"
+print ""
+ac1:
+color 7,0
+print "Command";
+input ac$
+ac$=ucase$(ac$)
+if ac$= "" then
+print ""
+goto ac2:
+else
+endif
+if ac$= "? EXP" then
+goto epchart:
+else
+endif
+if ac$= "E" then
+print ""
+goto ad:
+else
+endif
+if ac$= "HEAL" then
+goto heal:
+endif
+if ac$= "SAVE" then
+save= 1
+goto exit3:
+endif
+if ac$= "N" then
+goto sorrydir:
+else
+endif
+if ac$= "W" then
+goto sorrydir:
+else
+endif
+if ac$= "S" then
+goto sorrydir:
+else
+endif
+if ac$= "I" then
+goto inventory:
+else
+endif
+if ac$= "?" then
+goto help:
+else
+endif
+if ac$= "LS I" then
+print ""
+color 8,0
+if prof= 1 then
+print armr1$
+print armr2$
+print armr3$
+print armr4$
+print armr5$
+print armr6$
+print armr7$
+print armr8$
+print armr9$
+print armr10$
+print armr11$
+print armr12$
+print ""
+color 7,0
+goto ac1:
+endif
+if prof= 2 then
+print armr13$
+print armr14$
+print armr15$
+print armr16$
+print armr17$
+print armr18$
+print armr19$
+print armr20$
+print armr21$
+print armr22$
+print armr23$
+print armr24$
+print ""
+color 7,0
+goto ac1:
+endif
+if prof=3 then
+print armr25$
+print armr26$
+print armr27$
+print armr28$
+print armr29$
+print armr30$
+print armr31$
+print armr32$
+print armr33$
+print armr34$
+print armr35$
+print armr36$
+color 7,0
+print ""
+goto ac1:
+endif
+else
+endif
+if ac$= "C" then
+goto spell:
+else
+endif
+if ac$= "ALL" then
+goto allstats:
+else
+endif
+if ac$= "B" then
+print ""
+color 8,0
+if prof= 1 then
+print armr1$
+print armr2$
+print armr3$
+print armr4$
+print armr5$
+print armr6$
+print armr7$
+print armr8$
+print armr9$
+print armr10$
+print armr11$
+print armr12$
+goto buyarmr:
+endif
+if prof= 2 then
+print armr13$
+print armr14$
+print armr15$
+print armr16$
+print armr17$
+print armr18$
+print armr19$
+print armr20$
+print armr21$
+print armr22$
+print armr23$
+print armr24$
+goto buyarmr:
+endif
+if prof=3 then
+print armr25$
+print armr26$
+print armr27$
+print armr28$
+print armr29$
+print armr30$
+print armr31$
+print armr32$
+print armr33$
+print armr34$
+print armr35$
+print armr36$
+goto buyarmr:
+endif
+buyarmr:
+color 7,0
+print ""
+print "Which # weapon do you want to buy";
+input armr$
+armr$=ucase$(armr$)
+if armr$= "1" then
+if level < 2 then
+print ""
+goto sorrylev:
+endif
+if gold > 99 then
+if prof=1 then
+armor$= "A Leather Cloak"
+armor= 2
+endif
+if prof= 2 then
+armor$= "A Wooden Shield"
+armor= 2
+endif
+if prof= 3 then
+armor$= "Plain Robes"
+armor= 1
+endif
+print ""
+print "You bought ";
+print armor$;
+print " from the shop keeper"
+print ""
+gold= gold-100
+goto ac1:
+else
+endif
+if gold < 100 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+if armr$= "2" then
+if level < 4 then
+print ""
+goto sorrylev:
+endif
+if gold > 599 then
+if prof= 1 then
+armor$= "Studded Leather"
+armor= 5
+endif
+if prof= 2 then
+armor$= "A Steel Shield"
+armor= 4
+endif
+if prof= 3 then
+armor$= "A Thick Robes"
+armor=3
+endif
+print ""
+print "You bought ";
+print armor$;
+print " from the shop keeper"
+gold= gold-600
+goto ac1:
+else
+endif
+if gold < 600 then
+goto sorryg:
+else
+endif
+else
+endif
+if armr$= "3" then
+if level < 6 then
+print ""
+goto sorrylev:
+endif
+if gold > 2399 then
+if prof= 1 then
+armor$= "A Mail Shirt"
+armor=7
+endif
+if prof= 2 then
+armor$= "A Iron Shield"
+armor=8
+endif
+if prof= 3 then
+armor$= "Enchanted Robes"
+armor= 5
+endif
+print ""
+print "You bought  ";
+print armor$;
+print " from the shop keeper"
+gold= gold-2400
+print ""
+goto ac1:
+else
+endif
+if gold < 2400 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+if weap$= "4" then
+if level < 8 then
+print ""
+goto sorrylev:
+else
+endif
+if gold > 11999 then
+if prof= 1 then
+armor$= "Chain Mail"
+armor= 10
+endif
+if prof= 2 then
+armor$= "A Holly Cross Shield"
+armor= 11
+endif
+if prof= 3 then
+armor$= "Black Robes"
+armor= 8
+endif
+print ""
+print "You bought  ";
+print armor$;
+print " from the shop keeper"
+gold= gold-12000
+print ""
+goto ac1:
+else
+endif
+if gold < 12000 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+if weap$= "5" then
+if level < 10 then
+print ""
+goto sorrylev:
+else
+endif
+if gold > 17999 then
+if prof= 1 then
+armor$= "Plate Mail"
+armor= 13
+endif
+if prof= 2 then
+armor$= "A Blessed Cross Shield"
+armor= 12
+endif
+if prof= 3 then
+armor$= "Enchanted Black Robes"
+armor= 10
+endif
+print ""
+print "You bought  ";
+print armor$;
+print " from the shop keeper"
+gold= gold-18000
+print ""
+goto ac1:
+else
+endif
+if gold < 18000 then
+print ""
+goto sorryg:
+else
+endif
+else
+endif
+else
+endif
+if ac$= "X" then
+exit = 99
+goto exit:
+else
+goto nocommand:
+endif
+
+die:
+print ""
+color 4,0
+print "                         You Fall to the ground lifeless"
+print ""
+color 8,0
+kill "game1.sve"
+print "                               < Press any key >"
+youdie= 1
+loop980: xx46$= inkey$
+if xx46$= "" then loop980:
+cls
+goto newchar:
+
+ending:
+cls
+print ""
+print "You have defeated the Wizard Ejell"
+print "You must be VERY proud"
+print "Here's the deal, you will start over again, but with BETTER stats.."
+gemstone$= "None"
+str= str-20
+agil= agil-25
+vit= vit-20
+gold= 1
+goto ec1:
+
+forest:
+addon= 1
+goto exit3:
+forest2:
+call ("c:\vile\addons\forest.exe","")
+addon= 1
+open "I", 1, "forest.log"
+input#1, hello
+input#1, die
+input#1, exit
+input#1, loca$
+input#1, regular
+close 1
+kill "forest.log"
+if die= 1 then
+goto startprog:
+endif
+if exit= 1 then
+addon2= 1
+goto exit:
+endif
+goto levelc:
+
+mountain:
+addon= 3
+goto exit3:
+mountain2:
+call ("c:\vile\addons\mntn.exe","")
+addon= 3
+open "I", 1, "mntn.log"
+input#1, hello
+input#1, die
+input#1, exit
+input#1, loca$
+input#1, regular
+close 1
+kill "mntn.log"
+if die= 1 then
+goto startprog:
+endif
+if exit= 1 then
+addon2= 3
+goto exit:
+endif
+goto levelc:
+
+levelc:
+open "I", 1, "game1.sve"
+if error > 0 then
+color 7,8
+print ""
+print "                            You have no saved games"
+print ""
+goto newchar1:
+endif
+input#1, hello
+input#1, name$ crlf
+input#1, ep
+input#1, vit
+input#1, vit1
+input#1, gold
+input#1, agil
+input#1, str
+input#1, mana
+input#1, weapon$ crlf
+input#1, armor$ crlf
+input#1, weapon
+input#1, armor
+input#1, Spell$ crlf
+input#1, level
+input#1, gemstone$ crlf
+input#1, promo4
+input#1, bankgold
+input#1, race$ crlf
+input#1, race
+input#1, prof$ crlf
+input#1, prof
+input#1, potion
+input#1, addon2
+input#1, loca$
+close 1
+if regular = 1 then
+addon2= 99
+goto ad2:
+endif
+if regular = 2 then
+addon2= 99
+goto cd2:
+endif
+if addon2= 1 then
+goto forest:
+endif
+if addon2= 3 then
+goto mountain:
+endif
+if addon= 1 then
+addon= 0
+print ""
+goto ad2:
+endif
+if addon= 2 then
+addon= 0
+print ""
+goto ec2:
+endif
+if addon= 3 then
+addon= 0
+goto cd2:
+endif
+cls
+goto locate2:
+
+time:
+color 15,0
+print ""
+kill "game1.sve"
+print "Sorry, but your shareware trial is up. You have played the game 100"
+print "times since you installed it. Your saved game has been erased."
+print ""
+print "Please read the VILE.WRI file in the DOCS dir. for information on"
+print "how to register. Would you believe me if I said it was free ? It is."
+print ""
+print "Read the VILE.WRI file and find out how to register free."
+print ""
+goto exit1:
+
+exit:
+print ""
+codes:
+addon= 0
+print ""
+print "                       Do you want to save your game (Y/N)";
+input codes$
+codes$=ucase$(codes$)
+if codes$= "Y" then
+goto exit3:
+else
+endif
+if codes$= "N" then
+print ""
+goto exit1:
+else
+goto codes:
+endif
+exit3:
+hello= 0
+chdir "c:\vile"
+open "O", 1 "game1.sve"
+print#1 hello
+print#1 name$
+print#1 ep
+print#1 vit
+print#1 vit1
+print#1 gold
+print#1 agil
+print#1 str
+print#1 mana
+print#1 weapon$
+print#1 armor$
+print#1 weapon
+print#1 armor
+print#1 spell$
+print#1 level
+print#1 gemstone$
+print#1 promo4
+print#1 bankgold
+print#1 race$
+print#1 race
+print#1 prof$
+print#1 prof
+print#1 potion
+print#1 addon2
+print#1 loca$
+close 1
+if save= 1 then
+print ""
+print "Your game has been saved"
+print ""
+save= 0
+goto locate:
+endif
+if exit= 1 then
+goto exit1:
+endif
+if addon= 3 then
+addon= 0
+goto mountain2:
+endif
+if addon= 1 then
+addon= 0
+goto forest2:
+endif
+if exit= 99 then
+goto exit1:
+endif
+if addon2= 99 then
+goto locate:
+endif
+print ""
+exit1:
+print ""
+color 7,0
+print "                   < SHUTTING DOWN VILE 1.0.3b (Build 003) > "
+print ""
+color 8,0
+print "                             < PRESS ANY KEY >"
+loop45: x$= inkey$
+if x$= "" then loop45:
+print ""
+cls
+exits:
+color 8,0
+print ""
+print close1$
+print close2$
+print close3$
+print close4$
+print close5$
+print close6$
+print close7$
+print close8$
+print close9$
+print close10$
+print close11$
+print close12$
+print close13$
+print close14$
+print close15$
+print close16$
+print close17$
+print close18$
+print close19$
+color 7,0
+print ""
+print ""
+bye$= "COPYRIGHT 1997 ERIC NUSBAUM"

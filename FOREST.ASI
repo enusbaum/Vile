@@ -1,0 +1,3652 @@
+REM Vile Forest 1.0.2 Source Code
+REM DO NOT DISTRIBUTE
+REM Copyright 1997
+REM --Code Begins--
+print ""
+print "Loading Stats.";
+chdir "c:\vile"
+open "I", 1, "game1.sve"
+input#1, hello
+input#1, name$ crlf
+input#1, ep
+input#1, vit
+input#1, vit1
+input#1, gold
+input#1, agil
+input#1, str
+input#1, mana
+input#1, weapon$ crlf
+input#1, armor$ crlf
+input#1, weapon
+input#1, armor
+input#1, Spell$ crlf
+input#1, level
+input#1, gemstone$ crlf
+input#1, promo4
+input#1, bankgold
+input#1, race$ crlf
+input#1, race
+input#1, prof$ crlf
+input#1, prof
+input#1, potion
+input#1, addon2
+input#1, loca$
+close 1
+print "."
+print "Loading any/all Graphics";
+open "I", 1, "c:\vile\data\fhelp.vil"
+input#1, help0$ crlf
+input#1, help1$ crlf
+input#1, help2$ crlf
+input#1, help3$ crlf
+input#1, help4$ crlf
+input#1, help5$ crlf
+input#1, help6$ crlf
+input#1, help7$ crlf
+input#1, help8$ crlf
+input#1, help9$ crlf
+input#1, help10$ crlf
+input#1, help11$ crlf
+input#1, help12$ crlf
+input#1, help13$ crlf
+input#1, help14$ crlf
+input#1, help15$ crlf
+close 1
+print ".";
+open "I", 1, "c:\vile\data\map.vil"
+input#1, map0$ crlf
+input#1, map1$ crlf
+input#1, map2$ crlf
+input#1, map3$ crlf
+input#1, map4$ crlf
+input#1, map5$ crlf
+input#1, map6$ crlf
+input#1, map7$ crlf
+input#1, map8$ crlf
+input#1, map9$ crlf
+input#1, map10$ crlf
+input#1, map11$ crlf
+input#1, map12$ crlf
+input#1, map13$ crlf
+input#1, map14$ crlf
+input#1, map15$ crlf
+input#1, map16$ crlf
+input#1, map17$ crlf
+input#1, map18$ crlf
+input#1, map19$ crlf
+close 1
+print ".";
+open "i", 1, "c:\vile\data\witch.vil"
+input#1, witch1$ crlf
+input#1, witch2$ crlf
+input#1, witch3$ crlf
+input#1, witch4$ crlf
+input#1, witch5$ crlf
+input#1, witch6$ crlf
+input#1, witch7$ crlf
+input#1, witch8$ crlf
+input#1, witch9$ crlf
+input#1, witch10$ crlf
+input#1, witch11$ crlf
+input#1, witch12$ crlf
+close 1
+print ".";
+open "I", 1, "c:\vile\data\misc.vil"
+input#1, expir0$ crlf
+input#1, expir1$ crlf
+input#1, expir2$ crlf
+input#1, expir3$ crlf
+input#1, expir4$ crlf
+input#1, expir5$ crlf
+input#1, expir6$ crlf
+input#1, expir7$ crlf
+input#1, expir8$ crlf
+input#1, expir9$ crlf
+input#1, expir10$ crlf
+input#1, expir11$ crlf
+input#1, expir12$ crlf
+input#1, expir13$ crlf
+input#1, expir14$ crlf
+input#1, expir15$ crlf
+input#1, expir16$ crlf
+close 1
+print ".";
+open "I", 1, "reg.cde"
+input#1 jobe$ crlf
+input#1 name$ crlf
+input#1 adres1$ crlf
+input#1 adres2$ crlf
+input#1 phone$ crlf
+close 1
+print ".";
+if jobe$= "23071092712" then
+reg=1
+else
+reg=0
+endif
+print "."
+print "Prepairing Forest";
+monsterf= 0
+print ".";
+monsterf$= "Nobody"
+print ".";
+die= 0
+print ".";
+exit= 0
+print "."
+print ""
+if addon2= 1 then
+goto locate1:
+endif
+fa:
+loca$= "FA"
+FA2:
+print ""
+color 3,0
+print "You are at the Town Entrance"
+color 9,0
+print "There Nobody here here"
+color 1,0
+print "There is nothing on the floor"
+fa1:
+print ""
+print "Command";
+input fa$
+fa$=ucase$(fa$)
+if fa$= "" then
+goto FA2:
+else
+endif
+if fa$= "HEAL" then
+heal:
+color 3,0
+print ""
+print "You need healed";
+drink= vit1-vit
+print drink;
+print " vitality points"
+print ""
+color 9,0
+print "You have ";
+print potion;
+print " healing potions"
+print ""
+color 1,0
+print "(REMEMBER: 1 potion=1 vitality point)"
+print ""
+color 9,0
+print "How many do you want to drink";
+input drink1
+if drink1= 666 then
+goto die:
+endif
+if potion < drink1 then
+print ""
+color 3,0
+print "You don't have that many potions"
+print ""
+goto locate:
+endif
+potion=potion-drink1
+vit= vit+drink1
+if vit > vit1 then
+vit= vit1
+endif
+print ""
+color 3,0
+print "You drink down";
+print drink1;
+if drink= 1 then
+print " potion"
+print ""
+goto locate:
+endif
+print " potions"
+print ""
+goto locate:
+endif
+if fa$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fa$= "EP" then
+goto expir:
+endif
+if fa$= "?" then
+goto help:
+else
+endif
+if fa$= "? EXP" then
+goto epchart:
+else
+endif
+if fa$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+else
+endif
+if fa$= "VIT" then
+goto vital:
+else
+endif
+if fa$= "ALL" then
+goto allstats:
+else
+endif
+if fa$= "I" then
+goto inventory:
+else
+endif
+if fa$= "S" then
+goto fb:
+endif
+if fa$= "N" then
+regular = 1
+goto filend:
+endif
+if fa$= "ENERGIZE" then
+goto teleport:
+endif
+if fa$= "ROOM" then
+goto room:
+endif
+if fa$= "W" then
+goto sorrydir:
+endif
+if fa$= "MAP" then
+goto map:
+endif
+if fa$= "E" then
+goto sorrydir:
+endif
+if fa$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fb:
+loca$= "FB"
+goto fmonster:
+FB2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fb1:
+print "Command";
+input fb$
+fb$=ucase$(fb$)
+if fb$= "HEAL" then
+goto heal:
+endif
+if fb$= "MAP" then
+goto map:
+endif
+if fb$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fb$= "" then
+goto FB2:
+else
+endif
+if fb$= "EP" then
+goto expir:
+endif
+if fb$= "?" then
+goto help:
+endif
+if fb$= "? EXP" then
+goto epchart:
+endif
+if fb$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fb$= "VIT" then
+goto vital:
+endif
+if fb$= "ALL" then
+goto allstats:
+endif
+if fb$= "I" then
+goto inventory:
+endif
+if fb$= "S" then
+print ""
+goto sorrydir:
+endif
+if fb$= "N" then
+goto fa:
+endif
+if fb$= "A" then
+goto forresta:
+else
+endif
+if fb$= "W" then
+goto fd:
+endif
+if fb$= "ENERGIZE" then
+goto teleport:
+endif
+if fb$= "ROOM" then
+goto room:
+endif
+if fb$= "E" then
+goto fc:
+endif
+if fb$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fc:
+loca$= "FC"
+goto fmonster:
+FC2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fc1:
+print "Command";
+input fc$
+fc$=ucase$(fc$)
+if fc$= "" then
+goto FC2:
+else
+endif
+if fc$= "HEAL" then
+goto heal:
+endif
+if fc$= "MAP" then
+goto map:
+endif
+if fc$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fc$= "EP" then
+goto expir:
+endif
+if fc$= "?" then
+goto help:
+endif
+if fc$= "? EXP" then
+goto epchart:
+endif
+if fc$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fc$= "VIT" then
+goto vital:
+endif
+if fc$= "ALL" then
+goto allstats:
+endif
+if fc$= "I" then
+goto inventory:
+endif
+if fc$= "S" then
+print ""
+goto sorrydir:
+endif
+if fc$= "N" then
+goto sorrydir:
+endif
+if fc$= "A" then
+goto forresta:
+else
+endif
+if fc$= "W" then
+goto fb:
+endif
+if fc$= "ENERGIZE" then
+goto teleport:
+endif
+if fc$= "ROOM" then
+goto room:
+endif
+if fc$= "E" then
+goto ff:
+endif
+if fc$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+
+fd:
+loca$= "FD"
+goto fmonster:
+FD2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fd1:
+print "Command";
+input fd$
+fd$=ucase$(fd$)
+if fd$= "" then
+goto FD2:
+else
+endif
+if fd$= "MAP" then
+goto map:
+endif
+if fd$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fd$= "EP" then
+goto expir:
+endif
+if fd$= "HEAL" then
+goto heal:
+endif
+if fd$= "?" then
+goto help:
+endif
+if fd$= "? EXP" then
+goto epchart:
+endif
+if fd$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fd$= "VIT" then
+goto vital:
+endif
+if fd$= "ALL" then
+goto allstats:
+endif
+if fd$= "I" then
+goto inventory:
+endif
+if fd$= "S" then
+print ""
+goto fe:
+endif
+if fd$= "N" then
+goto sorrydir:
+endif
+if fd$= "A" then
+goto forresta:
+else
+endif
+if fd$= "W" then
+goto sorrydir:
+endif
+if fd$= "ENERGIZE" then
+goto teleport:
+endif
+if fd$= "ROOM" then
+goto room:
+endif
+if fd$= "E" then
+goto fb:
+endif
+if fd$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+
+fe:
+loca$= "FE"
+goto fmonster:
+FE2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fe1:
+print "Command";
+input fe$
+fe$=ucase$(fe$)
+if fe$= "" then
+goto FE2:
+else
+endif
+if fe$= "HEAL" then
+goto heal:
+endif
+if fe$= "EP" then
+goto expir:
+endif
+if fe$= "MAP" then
+goto map:
+endif
+if fe$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fe$= "?" then
+goto help:
+endif
+if fe$= "? EXP" then
+goto epchart:
+endif
+if fe$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fe$= "VIT" then
+goto vital:
+endif
+if fe$= "ALL" then
+goto allstats:
+endif
+if fe$= "I" then
+goto inventory:
+endif
+if fe$= "S" then
+goto sorrydir:
+endif
+if fe$= "N" then
+goto fd:
+endif
+if fe$= "A" then
+goto forresta:
+else
+endif
+if fe$= "ENERGIZE" then
+goto teleport:
+endif
+if fe$= "ROOM" then
+goto room:
+endif
+if fe$= "W" then
+goto sorrydir:
+endif
+if fe$= "E" then
+goto fj:
+endif
+if fe$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+ff:
+loca$= "FF"
+goto fmonster:
+FF2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+ff1:
+print "Command";
+input ff$
+ff$=ucase$(ff$)
+if ff$= "" then
+goto FF2:
+else
+endif
+if ff$= "HEAL" then
+goto heal:
+endif
+if ff$= "SAVE" then
+save= 1
+goto filend:
+endif
+if ff$= "EP" then
+goto expir:
+endif
+if ff$= "?" then
+goto help:
+endif
+if ff$= "? EXP" then
+goto epchart:
+endif
+if ff$= "MAP" then
+goto map:
+endif
+if ff$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if ff$= "VIT" then
+goto vital:
+endif
+if ff$= "ALL" then
+goto allstats:
+endif
+if ff$= "I" then
+goto inventory:
+endif
+if ff$= "S" then
+goto fg:
+endif
+if ff$= "N" then
+goto sorrydir:
+endif
+if ff$= "A" then
+goto forresta:
+else
+endif
+if ff$= "ENERGIZE" then
+goto teleport:
+endif
+if ff$= "ROOM" then
+goto room:
+endif
+if ff$= "W" then
+goto fc:
+endif
+if ff$= "E" then
+goto sorrydir:
+endif
+if ff$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fj:
+loca$= "FJ"
+goto fmonster:
+FJ2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fj1:
+print "Command";
+input fj$
+fj$=ucase$(fj$)
+if fj$= "" then
+goto FJ2:
+else
+endif
+if fj$= "MAP" then
+goto map:
+endif
+if fj$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fj$= "EP" then
+goto expir:
+endif
+if fj$= "?" then
+goto help:
+endif
+if fj$= "HEAL" then
+goto heal:
+endif
+if fj$= "? EXP" then
+goto epchart:
+endif
+if fj$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fj$= "VIT" then
+goto vital:
+endif
+if fj$= "ALL" then
+goto allstats:
+endif
+if fj$= "I" then
+goto inventory:
+endif
+if fj$= "S" then
+goto fk:
+endif
+if fj$= "N" then
+goto sorrydir:
+endif
+if fj$= "A" then
+goto forresta:
+else
+endif
+if fj$= "W" then
+goto fe:
+endif
+if fj$= "ENERGIZE" then
+goto teleport:
+endif
+if fj$= "ROOM" then
+goto room:
+endif
+if fj$= "E" then
+goto sorrydir:
+endif
+if fj$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fg:
+loca$= "FG"
+goto fmonster:
+FG2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fg1:
+print "Command";
+input fg$
+fg$=ucase$(fg$)
+if fg$= "" then
+goto FG2:
+else
+endif
+if fg$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fg$= "HEAL" then
+goto heal:
+endif
+if fg$= "MAP" then
+goto map:
+endif
+if fg$= "EP" then
+goto expir:
+endif
+if fg$= "?" then
+goto help:
+endif
+if fg$= "? EXP" then
+goto epchart:
+endif
+if fg$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fg$= "VIT" then
+goto vital:
+endif
+if fg$= "ALL" then
+goto allstats:
+endif
+if fg$= "I" then
+goto inventory:
+endif
+if fg$= "S" then
+goto fn:
+endif
+if fg$= "N" then
+goto ff:
+endif
+if fg$= "ENERGIZE" then
+goto teleport:
+endif
+if fg$= "ROOM" then
+goto room:
+endif
+if fg$= "A" then
+goto forresta:
+else
+endif
+if fg$= "W" then
+goto fh:
+endif
+if fg$= "E" then
+goto sorrydir:
+endif
+if fg$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fh:
+loca$= "FH"
+goto fmonster:
+FH2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fh1:
+print "Command";
+input fh$
+fh$=ucase$(fh$)
+if fh$= "" then
+goto FH2:
+else
+endif
+if fh$= "MAP" then
+goto map:
+endif
+if fh$= "HEAL" then
+goto heal:
+endif
+if fh$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fh$= "EP" then
+goto expir:
+endif
+if fh$= "?" then
+goto help:
+endif
+if fh$= "? EXP" then
+goto epchart:
+endif
+if fh$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fh$= "VIT" then
+goto vital:
+endif
+if fh$= "ALL" then
+goto allstats:
+endif
+if fh$= "I" then
+goto inventory:
+endif
+if fh$= "S" then
+goto fi:
+endif
+if fh$= "ENERGIZE" then
+goto teleport:
+endif
+if fh$= "ROOM" then
+goto room:
+endif
+if fh$= "N" then
+goto sorrydir:
+endif
+if fh$= "A" then
+goto forresta:
+else
+endif
+if fh$= "W" then
+goto sorrydir:
+endif
+if fh$= "E" then
+goto fg:
+endif
+if fh$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fi:
+loca$= "FI"
+goto fmonster:
+FI2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fi1:
+print "Command";
+input fi$
+fi$=ucase$(fi$)
+if fi$= "" then
+goto FI2:
+else
+endif
+if fi$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fi$= "MAP" then
+goto map:
+endif
+if fi$= "EP" then
+goto expir:
+endif
+if fi$= "HEAL" then
+goto heal:
+endif
+if fi$= "?" then
+goto help:
+endif
+if fi$= "? EXP" then
+goto epchart:
+endif
+if fi$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fi$= "VIT" then
+goto vital:
+endif
+if fi$= "ALL" then
+goto allstats:
+endif
+if fi$= "I" then
+goto inventory:
+endif
+if fi$= "S" then
+goto fm:
+endif
+if fi$= "N" then
+goto fh:
+endif
+if fi$= "ENERGIZE" then
+goto teleport:
+endif
+if fi$= "ROOM" then
+goto room:
+endif
+if fi$= "A" then
+goto forresta:
+else
+endif
+if fi$= "W" then
+goto sorrydir:
+endif
+if fi$= "E" then
+goto sorrydir:
+endif
+if fi$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+castsp:
+print ""
+print "As you cast ";
+print spell$;
+print " you feel your body heal"
+print ""
+goto locate:
+
+fm:
+loca$= "FM"
+goto fmonster:
+FM2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fm1:
+print "Command";
+input fm$
+fm$=ucase$(fm$)
+if fm$= "" then
+goto FM2:
+else
+endif
+if fm$= "HEAL" then
+goto heal:
+endif
+if fm$= "MAP" then
+goto map:
+endif
+if fm$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fm$= "EP" then
+goto expir:
+endif
+if fm$= "?" then
+goto help:
+endif
+if fm$= "? EXP" then
+goto epchart:
+endif
+if fm$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fm$= "VIT" then
+goto vital:
+endif
+if fm$= "ALL" then
+goto allstats:
+endif
+if fm$= "I" then
+goto inventory:
+endif
+if fm$= "S" then
+print ""
+goto sorrydir:
+endif
+if fm$= "N" then
+goto fi:
+endif
+if fm$= "A" then
+goto forresta:
+else
+endif
+if fm$= "W" then
+goto fp:
+endif
+if fm$= "ENERGIZE" then
+goto teleport:
+endif
+if fm$= "ROOM" then
+goto room:
+endif
+if fm$= "E" then
+goto fo:
+endif
+if fm$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fp:
+loca$= "FP"
+goto fmonster:
+FP2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fp1:
+print "Command";
+input fp$
+fp$=ucase$(fp$)
+if fp$= "" then
+goto FP2:
+else
+endif
+if fp$= "MAP" then
+goto map:
+endif
+if fp$= "HEAL" then
+goto heal:
+endif
+if fp$= "EP" then
+goto expir:
+endif
+if fp$= "?" then
+goto help:
+endif
+if fp$= "? EXP" then
+goto epchart:
+endif
+if fp$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fp$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fp$= "VIT" then
+goto vital:
+endif
+if fp$= "ALL" then
+goto allstats:
+endif
+if fp$= "I" then
+goto inventory:
+endif
+if fp$= "S" then
+goto fq:
+endif
+if fp$= "N" then
+goto sorrydir:
+endif
+if fp$= "A" then
+goto forresta:
+else
+endif
+if fp$= "W" then
+goto sorrydir:
+endif
+if fp$= "ENERGIZE" then
+goto teleport:
+endif
+if fp$= "ROOM" then
+goto room:
+endif
+if fp$= "E" then
+goto fm:
+endif
+if fp$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fo:
+loca$= "FO"
+goto fmonster:
+FO2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fo1:
+print "Command";
+input fo$
+fo$=ucase$(fo$)
+if fo$= "" then
+goto FO2:
+else
+endif
+if fo$= "MAP" then
+goto map:
+endif
+if fo$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fo$= "HEAL" then
+goto heal:
+endif
+if fo$= "EP" then
+goto expir:
+endif
+if fo$= "?" then
+goto help:
+endif
+if fo$= "? EXP" then
+goto epchart:
+endif
+if fo$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fo$= "VIT" then
+goto vital:
+endif
+if fo$= "ALL" then
+goto allstats:
+endif
+if fo$= "I" then
+goto inventory:
+endif
+if fo$= "S" then
+goto fs:
+endif
+if fo$= "N" then
+goto sorrydir:
+endif
+if fo$= "A" then
+goto forresta:
+else
+endif
+if fo$= "W" then
+goto fm:
+endif
+if fo$= "E" then
+goto fr:
+endif
+if fo$= "ENERGIZE" then
+goto teleport:
+endif
+if fo$= "ROOM" then
+goto room:
+endif
+if fo$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fk:
+loca$= "FK"
+goto fmonster:
+FK2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fk1:
+print "Command";
+input fk$
+fk$=ucase$(fk$)
+if fk$= "" then
+goto FK2:
+else
+endif
+if fk$= "MAP" then
+goto map:
+endif
+if fk$= "EP" then
+goto expir:
+endif
+if fk$= "?" then
+goto help:
+endif
+if fk$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fk$= "HEAL" then
+goto heal:
+endif
+if fk$= "? EXP" then
+goto epchart:
+endif
+if fk$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fk$= "VIT" then
+goto vital:
+endif
+if fk$= "ALL" then
+goto allstats:
+endif
+if fk$= "I" then
+goto inventory:
+endif
+if fk$= "S" then
+goto sorrydir:
+endif
+if fk$= "N" then
+goto fj:
+endif
+if fk$= "A" then
+goto forresta:
+else
+endif
+if fk$= "W" then
+goto fl:
+endif
+if fk$= "ENERGIZE" then
+goto teleport:
+endif
+if fk$= "ROOM" then
+goto room:
+endif
+if fk$= "E" then
+goto sorrydir:
+endif
+if fk$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fl:
+loca$= "FL"
+goto fmonster:
+FL2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fl1:
+print "Command";
+input fl$
+fl$=ucase$(fl$)
+if fl$= "" then
+goto FL2:
+else
+endif
+if fl$= "EP" then
+goto expir:
+endif
+if fl$= "?" then
+goto help:
+endif
+if fl$= "HEAL" then
+goto heal:
+endif
+if fl$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fl$= "MAP" then
+goto map:
+endif
+if fl$= "? EXP" then
+goto epchart:
+endif
+if fl$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fl$= "VIT" then
+goto vital:
+endif
+if fl$= "ALL" then
+goto allstats:
+endif
+if fl$= "I" then
+goto inventory:
+endif
+if fl$= "S" then
+goto sorrydir:
+endif
+if fl$= "N" then
+goto sorrydir:
+endif
+if fl$= "A" then
+goto forresta:
+else
+endif
+if fl$= "ENERGIZE" then
+goto teleport:
+endif
+if fl$= "ROOM" then
+goto room:
+endif
+if fl$= "W" then
+goto sorrydir:
+endif
+if fl$= "E" then
+goto fk:
+endif
+if fl$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fr:
+loca$= "FR"
+goto fmonster:
+FR2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fr1:
+print "Command";
+input fr$
+fr$=ucase$(fr$)
+if fr$= "" then
+goto FR2:
+else
+endif
+if fr$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fr$= "MAP" then
+goto map:
+endif
+if fr$= "EP" then
+goto expir:
+endif
+if fr$= "?" then
+goto help:
+endif
+if fr$= "? EXP" then
+goto epchart:
+endif
+if fr$= "HEAL" then
+goto heal:
+endif
+if fr$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fr$= "VIT" then
+goto vital:
+endif
+if fr$= "ALL" then
+goto allstats:
+endif
+if fr$= "I" then
+goto inventory:
+endif
+if fr$= "S" then
+goto sorrydir:
+endif
+if fr$= "N" then
+goto sorrydir:
+endif
+if fr$= "A" then
+goto forresta:
+else
+endif
+if fr$= "W" then
+goto fo:
+endif
+if fr$= "ENERGIZE" then
+goto teleport:
+endif
+if fr$= "ROOM" then
+goto room:
+endif
+if fr$= "E" then
+goto sorrydir:
+endif
+if fr$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fs:
+loca$= "FS"
+goto fmonster:
+FS2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fs1:
+print "Command";
+input fs$
+fs$=ucase$(fs$)
+if fs$= "" then
+goto FS2:
+else
+endif
+if fs$= "MAP" then
+goto map:
+endif
+if fs$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fs$= "EP" then
+goto expir:
+endif
+if fs$= "HEAL" then
+goto heal:
+endif
+if fs$= "?" then
+goto help:
+endif
+if fs$= "? EXP" then
+goto epchart:
+endif
+if fs$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fs$= "VIT" then
+goto vital:
+endif
+if fs$= "ALL" then
+goto allstats:
+endif
+if fs$= "I" then
+goto inventory:
+endif
+if fs$= "S" then
+print ""
+goto sorrydir:
+endif
+if fs$= "N" then
+goto fo:
+endif
+if fs$= "A" then
+goto forresta:
+else
+endif
+if fs$= "W" then
+goto sorrydir:
+endif
+if fs$= "ENERGIZE" then
+goto teleport:
+endif
+if fs$= "ROOM" then
+goto room:
+endif
+if fs$= "E" then
+goto ft:
+endif
+if fs$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+ft:
+loca$= "FT"
+goto fmonster:
+FT2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+ft1:
+print "Command";
+input ft$
+ft$=ucase$(ft$)
+if ft$= "" then
+goto FT2:
+else
+endif
+if ft$= "HEAL" then
+goto heal:
+endif
+if ft$= "MAP" then
+goto map:
+endif
+if ft$= "SAVE" then
+save= 1
+goto filend:
+endif
+if ft$= "EP" then
+goto expir:
+endif
+if ft$= "?" then
+goto help:
+endif
+if ft$= "? EXP" then
+goto epchart:
+endif
+if ft$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if ft$= "VIT" then
+goto vital:
+endif
+if ft$= "ALL" then
+goto allstats:
+endif
+if ft$= "I" then
+goto inventory:
+endif
+if ft$= "S" then
+print ""
+goto fw:
+endif
+if ft$= "N" then
+goto sorrydir:
+endif
+if ft$= "A" then
+goto forresta:
+else
+endif
+if ft$= "ENERGIZE" then
+goto teleport:
+endif
+if ft$= "ROOM" then
+goto room:
+endif
+if ft$= "W" then
+goto fs:
+endif
+if ft$= "E" then
+goto fx:
+endif
+if ft$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fw:
+loca$= "FW"
+goto fmonster:
+FW2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fw1:
+print "Command";
+input fw$
+fw$=ucase$(fw$)
+if fw$= "" then
+goto FW2:
+else
+endif
+if fw$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fw$= "HEAL" then
+goto heal:
+endif
+if fw$= "EP" then
+goto expir:
+endif
+if fw$= "MAP" then
+goto map:
+endif
+if fw$= "?" then
+goto help:
+endif
+if fw$= "? EXP" then
+goto epchart:
+endif
+if fw$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fw$= "VIT" then
+goto vital:
+endif
+if fw$= "ALL" then
+goto allstats:
+endif
+if fw$= "I" then
+goto inventory:
+endif
+if fw$= "S" then
+print ""
+goto sorrydir:
+endif
+if fw$= "N" then
+goto ft:
+endif
+if fw$= "A" then
+goto forresta:
+else
+endif
+if fw$= "ENERGIZE" then
+goto teleport:
+endif
+if fw$= "ROOM" then
+goto room:
+endif
+if fw$= "W" then
+goto sorrydir:
+endif
+if fw$= "E" then
+goto fz:
+endif
+if fw$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fz:
+loca$= "FZ"
+goto fmonster:
+FZ2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fz1:
+print "Command";
+input fz$
+fz$=ucase$(fz$)
+if fz$= "" then
+goto FZ2:
+else
+endif
+if fz$= "HEAL" then
+goto heal:
+endif
+if fz$= "MAP" then
+goto map:
+endif
+if fz$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fz$= "EP" then
+goto expir:
+endif
+if fz$= "?" then
+goto help:
+endif
+if fz$= "? EXP" then
+goto epchart:
+endif
+if fz$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fz$= "VIT" then
+goto vital:
+endif
+if fz$= "ALL" then
+goto allstats:
+endif
+if fz$= "I" then
+goto inventory:
+endif
+if fz$= "S" then
+print ""
+goto sorrydir:
+endif
+if fz$= "N" then
+goto sorrydir:
+endif
+if fz$= "ENERGIZE" then
+goto teleport:
+endif
+if fz$= "ROOM" then
+goto room:
+endif
+if fz$= "A" then
+goto forresta:
+else
+endif
+if fz$= "W" then
+goto fw:
+endif
+if fz$= "E" then
+goto xx:
+endif
+if fz$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fx:
+loca$= "FX"
+goto fmonster:
+FX2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fx1:
+print "Command";
+input fx$
+fx$=ucase$(fx$)
+if fx$= "" then
+goto FX2:
+else
+endif
+if fx$= "HEAL" then
+goto heal:
+endif
+if fx$= "EP" then
+goto expir:
+endif
+if fx$= "MAP" then
+goto map:
+endif
+if fx$= "?" then
+goto help:
+endif
+if fx$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fx$= "? EXP" then
+goto epchart:
+endif
+if fx$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fx$= "VIT" then
+goto vital:
+endif
+if fx$= "ALL" then
+goto allstats:
+endif
+if fx$= "I" then
+goto inventory:
+endif
+if fx$= "S" then
+goto sorrydir:
+endif
+if fx$= "ENERGIZE" then
+goto teleport:
+endif
+if fx$= "ROOM" then
+goto room:
+endif
+if fx$= "N" then
+goto fy:
+endif
+if fx$= "A" then
+goto forresta:
+else
+endif
+if fx$= "W" then
+goto ft:
+endif
+if fx$= "E" then
+goto sorrydir:
+endif
+if fx$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fy:
+loca$= "FY"
+goto fmonster:
+FY2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fy1:
+print "Command";
+input fy$
+fy$=ucase$(fy$)
+if fy$= "" then
+goto FY2:
+else
+endif
+if fy$= "HEAL" then
+goto heal:
+endif
+if fy$= "MAP" then
+goto map:
+endif
+if fy$= "EP" then
+goto expir:
+endif
+if fy$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fy$= "?" then
+goto help:
+endif
+if fy$= "? EXP" then
+goto epchart:
+endif
+if fy$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fy$= "VIT" then
+goto vital:
+endif
+if fy$= "ALL" then
+goto allstats:
+endif
+if fy$= "I" then
+goto inventory:
+endif
+if fy$= "S" then
+goto fx:
+endif
+if fy$= "N" then
+goto sorrydir:
+endif
+if fy$= "ENERGIZE" then
+goto teleport:
+endif
+if fy$= "ROOM" then
+goto room:
+endif
+if fy$= "A" then
+goto forresta:
+else
+endif
+if fy$= "W" then
+goto sorrydir:
+endif
+if fy$= "E" then
+goto sorrydir:
+endif
+if fy$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fq:
+loca$= "FQ"
+goto fmonster:
+FQ2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fq1:
+print "Command";
+input fq$
+fq$=ucase$(fq$)
+if fq$= "" then
+goto FQ2:
+else
+endif
+if fq$= "HEAL" then
+goto heal:
+endif
+if fq$= "EP" then
+goto expir:
+endif
+if fq$= "MAP" then
+goto map:
+endif
+if fq$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fq$= "?" then
+goto help:
+endif
+if fq$= "? EXP" then
+goto epchart:
+endif
+if fq$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fq$= "VIT" then
+goto vital:
+endif
+if fq$= "ALL" then
+goto allstats:
+endif
+if fq$= "I" then
+goto inventory:
+endif
+if fq$= "S" then
+print ""
+goto sorrydir:
+endif
+if fq$= "N" then
+goto fp:
+endif
+if fq$= "ENERGIZE" then
+goto teleport:
+endif
+if fq$= "ROOM" then
+goto room:
+endif
+if fq$= "A" then
+goto forresta:
+else
+endif
+if fq$= "W" then
+goto sorrydir:
+endif
+if fq$= "E" then
+goto fu:
+endif
+if fq$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fu:
+loca$= "FU"
+goto fmonster:
+FU2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fu1:
+print "Command";
+input fu$
+fu$=ucase$(fu$)
+if fu$= "" then
+goto FU2:
+else
+endif
+if fu$= "MAP" then
+goto map:
+endif
+if fu$= "HEAL" then
+goto heal:
+endif
+if fu$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fu$= "EP" then
+goto expir:
+endif
+if fu$= "?" then
+goto help:
+endif
+if fu$= "? EXP" then
+goto epchart:
+endif
+if fu$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fu$= "VIT" then
+goto vital:
+endif
+if fu$= "ALL" then
+goto allstats:
+endif
+if fu$= "I" then
+goto inventory:
+endif
+if fu$= "S" then
+goto fv:
+endif
+if fu$= "ENERGIZE" then
+goto teleport:
+endif
+if fu$= "ROOM" then
+goto room:
+endif
+if fu$= "N" then
+goto sorrydir:
+endif
+if fu$= "A" then
+goto forresta:
+else
+endif
+if fu$= "W" then
+goto fq:
+endif
+if fu$= "E" then
+goto sorrydir:
+endif
+if fu$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fv:
+loca$= "FV"
+goto fmonster:
+FV2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fv1:
+print "Command";
+input fv$
+fv$=ucase$(fv$)
+if fv$= "" then
+goto FV2:
+else
+endif
+if fv$= "MAP" then
+goto map:
+endif
+if fv$= "HEAL" then
+goto heal:
+endif
+if fv$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fv$= "EP" then
+goto expir:
+endif
+if fv$= "?" then
+goto help:
+endif
+if fv$= "? EXP" then
+goto epchart:
+endif
+if fv$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fv$= "VIT" then
+goto vital:
+endif
+if fv$= "ALL" then
+goto allstats:
+endif
+if fv$= "I" then
+goto inventory:
+endif
+if fv$= "S" then
+print ""
+goto sorrydir:
+endif
+if fv$= "ENERGIZE" then
+goto teleport:
+endif
+if fv$= "ROOM" then
+goto room:
+endif
+if fv$= "N" then
+goto fu:
+endif
+if fv$= "A" then
+goto forresta:
+else
+endif
+if fv$= "W" then
+goto sorrydir:
+endif
+if fv$= "E" then
+goto sorrydir:
+endif
+if fv$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+fn:
+loca$= "FN"
+goto fmonster:
+FN2:
+print ""
+color 3,0
+print "You are in the Forest"
+color 9,0
+print "There is ";
+print monsterf$;
+print " here here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+fn1:
+print "Command";
+input fn$
+fn$=ucase$(fn$)
+if fn$= "" then
+goto FN2:
+else
+endif
+if fn$= "SAVE" then
+save= 1
+goto filend:
+endif
+if fn$= "EP" then
+goto expir:
+endif
+if fn$= "HEAL" then
+goto heal:
+endif
+if fn$= "MAP" then
+goto map:
+endif
+if fn$= "?" then
+goto help:
+endif
+if fn$= "? EXP" then
+goto epchart:
+endif
+if fn$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if fn$= "VIT" then
+goto vital:
+endif
+if fn$= "ALL" then
+goto allstats:
+endif
+if fn$= "I" then
+goto inventory:
+endif
+if fn$= "S" then
+print ""
+goto sorrydir:
+endif
+if fn$= "N" then
+goto fg:
+endif
+if fn$= "ENERGIZE" then
+goto teleport:
+endif
+if fn$= "ROOM" then
+goto room:
+endif
+if fn$= "A" then
+goto forresta:
+else
+endif
+if fn$= "W" then
+goto sorrydir:
+endif
+if fn$= "E" then
+goto sorrydir:
+endif
+if fn$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+spell:
+if spell$ = "Wozaru" then
+if mana < 1 then
+goto sorrymana:
+else
+mana= mana-1
+vit= vit+15
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Manuaru" then
+if mana < 2 then
+goto sorrymana:
+else
+mana= mana-2
+vit= vit+25
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Mozaru" then
+if mana < 3 then
+goto sorrymana:
+else
+mana= mana-3
+vit= vit+49
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Cannojo" then
+if mana < 5 then
+goto sorrymana:
+else
+mana= mana-5
+vit= vit+80
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Casoro" then
+if mana < 8 then
+goto sorrymana:
+else
+mana= mana-8
+vit= vit+150
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+if spell$ = "Xenwozaru" then
+if mana < 10 then
+goto sorrymana:
+else
+mana= mana-10
+vit= vit+350
+endif
+if vit > vit1 then
+vit= vit1
+goto castsp:
+else
+endif
+goto castsp:
+else
+endif
+
+sorrymana:
+color 9,0
+print ""
+print "Sorry you don't have enough mana to cast your healing spell";
+print ""
+goto locate:
+
+expir:
+color 9,0
+print ""
+print "Level = ";
+print level
+print "Experience Points = ";
+print ep
+print "Gemstone = ";
+print gemstone$
+print ""
+goto locate:
+vital:
+color 9,0
+print ""
+print "Vitality = ";
+print vit;
+print "/";
+print vit1
+print ""
+goto locate:
+help:
+print ""
+color 3,0
+print help0$
+print help1$
+print help2$
+print help3$
+print help4$
+print help5$
+print help6$
+print help7$
+print help8$
+print help9$
+print help10$
+print help11$
+print help12$
+print help13$
+print help14$
+print help15$
+print "                     Press any key to continue"
+loop788: x$= inkey$
+if x$= "" then loop788:
+color 1,0
+goto locate:
+
+epchart:
+color 9,0
+print expir0$
+print expir1$
+print expir2$
+print expir3$
+print expir4$
+print expir5$
+print expir6$
+print expir7$
+print expir8$
+print expir9$
+print expir10$
+print expir11$
+print expir12$
+print expir13$
+print expir14$
+print expir15$
+print expir16$
+goto locate:
+allstats:
+color 9,0
+print ""
+print name$;
+print " the ";
+print prof$
+print ""
+print "You Vitality = ";
+print vit;
+print "/";
+print vit1
+print "Your Strength = ";
+print str
+print "Your Agility =  ";
+print  agil
+print "Your Armor  = ";
+print armor$
+print "Your Weapon = ";
+print weapon$
+print "Your EP = ";
+print ep
+print "Your Level = ";
+print level
+if prof= 1 then
+print ""
+goto locate:
+endif
+print "Your Spell = ";
+print spell$
+print "Your Mana = ";
+print mana
+print ""
+goto locate:
+
+inventory:
+color 9,0
+print ""
+print "Gold= ";
+print gold
+print "Healing Potions= ";
+print potion
+print ""
+goto locate:
+
+sorrydir:
+color 9,0
+print ""
+print "Sorry there is no exit in this direction"
+print ""
+goto locate:
+
+nocommand:
+color 9,0
+print ""
+print "Sorry I do not understand this command"
+print ""
+goto locate:
+
+forresta:
+if monsterf= 0 then
+color 9,0
+print ""
+print "Sorry there is not a monster to attack here"
+print ""
+goto locate:
+else
+endif
+miss =rnd (0)
+miss= miss mod 15
+if miss > agil then
+color 2,0
+print ""
+print "Your swing ";
+color 7,0
+print "misses ";
+color 2,0
+print monsterf$
+print ""
+goto ack:
+else
+goto hitthebitch:
+endif
+hitthebitch:
+hit= rnd (0)
+hit= hit mod 10
+hit= hit+1
+hit= hit+str
+hit= hit+weapon
+monsterfvit= monsterfvit-hit
+print ""
+print "You hit ";
+print monsterf$;
+print " for";
+print hit;
+print " damage"
+print ""
+if monsterfvit < 1 then
+goto monsterfdie:
+else
+endif
+ack:
+hit= rnd (0)
+hit= hit mod 10
+hit= hit-armor
+if hit < 1 then
+color 4,0
+print ""
+print monsterf$;
+print "'s attack bounces off your armor"
+print ""
+color 7,0
+goto locate:
+else
+endif
+attack= rnd (0)
+attack= attack mod 2
+attack= attack+1
+if attack= 1 then
+hit= rnd (0)
+hit= hit mod 10
+hit= hit+1
+hit= hit+monsterfst1
+vit= vit-hit
+color 4,0
+print monsterf$;
+print monsterfat1$;
+print hit;
+print " damage"
+print ""
+if vit < 1 then
+goto die:
+else
+endif
+color 7,0
+else
+endif
+if attack= 2 then
+hit= rnd (0)
+hit= hit mod 15
+hit= hit+1
+hit= hit+monsterfst2
+hit= hit-armor
+vit= vit-hit
+color 4,0
+print monsterf$;
+print monsterfat2$;
+print hit;
+print " damage"
+print ""
+if vit < 1 then
+goto die:
+else
+endif
+color 7,0
+goto locate:
+else
+endif
+goto locate:
+
+monsterfdie:
+color 3,0
+print ""
+print monsterf$;
+print " falls to the ground lifeless"
+print ""
+color 9,0
+print "You find";
+goldfind= rnd (0)
+goldfind= goldfind mod 5
+goldfind= goldfind+monsterfst2
+expir= monsterfst2/2
+if ep > 31500 then
+goto goldfindf:
+else
+endif
+ep= ep+expir
+if ep < 0 then
+ep= 31500
+else
+endif
+goldfindf:
+print goldfind;
+print " gold while searching the area"
+print ""
+gold= gold+goldfind
+monsterf= 0
+monsterf$= "Nobody"
+color 1,0
+goto locate:
+
+filend:
+exit3:
+hello= 0
+addon2= 1
+chdir "c:\vile"
+kill "game1.sve"
+run "copy c:\vile\temp\game.bak"
+name "game.bak" AS "game1.sve"
+open "O", 1 "game1.sve"
+print#1 hello
+print#1 name$
+print#1 ep
+print#1 vit
+print#1 vit1
+print#1 gold
+print#1 agil
+print#1 str
+print#1 mana
+print#1 weapon$
+print#1 armor$
+print#1 weapon
+print#1 armor
+print#1 spell$
+print#1 level
+print#1 gemstone$
+print#1 promo4
+print#1 bankgold
+print#1 race$
+print#1 race
+print#1 prof$
+print#1 prof
+print#1 potion
+print#1, addon2
+if save= 1 then
+print#1, loca$
+close 1
+print ""
+print "Game Saved"
+print ""
+save= 0
+goto locate:
+endif
+loca$= "CD"
+print#1, loca$
+close 1
+goto exit:
+
+duh:
+color 9,0
+print ""
+print "Sorry, your not allowed to cast spells"
+print ""
+goto locate:
+
+fmonster:
+monsterf= rnd (0)
+monsterf= monsterf mod 23
+if monsterf>20 then
+monsterf$= "Nobody"
+else
+endif
+if monsterf= 1 then
+monsterf$= "A Centaur Archer"
+monsterfst1= 10+level
+monsterfst2= 15+level
+monsterfat1$= " hit you with it's knife for"
+monsterfat2$= " hit you with an arrow for"
+monsterfvit= 75+level
+else
+endif
+if monsterf= 2 then
+monsterf$= "A Dark Elf"
+monsterfst1= 15+level
+monsterfst2= 25+level
+monsterfat1$= " hit you with it's knife for"
+monsterfat2$= " vicously hit you with it's knife for"
+monsterfvit= 75+level
+else
+endif
+if monsterf= 3 then
+monsterf$= "A Large Bear"
+monsterfst1= 15+level
+monsterfst2= 20+level
+monsterfat1$= " hit you with it's claws for"
+monsterfat2$= " bit you for"
+monsterfvit= 50+level
+else
+endif
+if monsterf= 4 then
+monsterf$= "A Large Lizard"
+monsterfst1= 50+level
+monsterfst2= 75+level
+monsterfat1$= " lashes you with it's claws for"
+monsterfat2$= " bites you for"
+monsterfvit= 60+level
+else
+endif
+if monsterf= 5 then
+monsterf$= "A Small Dragon"
+monsterfst1= 75+level
+monsterfst2= 100+level
+monsterfat1$= " gashes you with it's claws for"
+monsterfat2$= " breaths fire on you for"
+monstervit= 100+level
+else
+endif
+if monsterf= 6 then
+monsterf$= "A Tree Folk"
+monsterfst1= 10+level
+monsterfst2= 15+level
+monsterfat1$= " hit you with it's knife for"
+monsterfat2$= " hit you with an ax for"
+monsterfvit= 25+level
+else
+endif
+if monsterf= 7 then
+monsterf$= "A Elder Tree Folk"
+monsterfst1= 15+level
+monsterfst2= 25+level
+monsterfat1$= " hit you with it's staff for"
+monsterfat2$= " vicously hit you with a spell for"
+monsterfvit= 50+level
+else
+endif
+if monsterf= 8 then
+monsterf$= "A Small Goblin Raider"
+monsterfst1= level+5
+monsterfst2= level+10
+monsterfat1$= " hit you with it's big dagger for"
+monsterfat2$= " hit you vicously with it's dagger for"
+monsterfvit= 50+level
+else
+endif
+if monsterf= 9 then
+monsterf$= "A Passing Trader"
+monsterfst1= level+10
+monsterfst2= level+20
+monsterfat1$= " hits you with a knife for"
+monsterfat2$= " slashes you with a knife for"
+monsterfvit= 60+level
+else
+endif
+if monsterf= 10 then
+monsterf$= "A Large Goblin Trader"
+monsterfst1= 50+level
+monsterfst2= 75+level
+monsterfat1$= " gashes you with it's sword for"
+monsterfat2$= " bashes you with it's club for"
+monstervit= 90+level
+else
+endif
+if monsterf= 11 then
+monsterf$= "A Rabid Wombat"
+monsterfst1= 12+level
+monsterfst2= 17+level
+monsterfat1$= " hit you with it's claws for"
+monsterfat2$= " bit you with it's foamy mouth for"
+monsterfvit= 80+level
+else
+endif
+if monsterf= 12 then
+monsterf$= "A Elvish Hunter"
+monsterfst1= 10+level
+monsterfst2= 30+level
+monsterfat1$= " hit you with it's knife for"
+monsterfat2$= " hit you with a poison arrow for"
+monsterfvit= 30+level
+else
+endif
+if monsterf= 13 then
+monsterf$= "A Huge Toad"
+monsterfst1= 15+level
+monsterfst2= 100+level
+monsterfat1$= " hit you for"
+monsterfat2$= " swallowed you for"
+monsterfvit= 60+level
+else
+endif
+if monsterf= 14 then
+monsterf$= "A Large Boar"
+monsterfst1= 50+level
+monsterfst2= 75+level
+monsterfat1$= " lashes you with tusks for"
+monsterfat2$= " bites you for"
+monsterfvit= 80+level
+else
+endif
+if monsterf= 15 then
+monsterf$= "A Bown Ouphe"
+monsterfst1= 20+level
+monsterfst2= 25+level
+monsterfat1$= " gashes you with it's knife for"
+monsterfat2$= " hits you in the chest with his knife for"
+monstervit= 50+level
+else
+endif
+if monsterf= 16 then
+monsterf$= "A Elf Scout"
+monsterfst1= 10+level
+monsterfst2= 15+level
+monsterfat1$= " hit you with it's knife for"
+monsterfat2$= " hit you with a arrow for"
+monsterfvit= 25+level
+else
+endif
+if monsterf= 17 then
+monsterf$= "A Large Asp"
+monsterfst1= 15+level
+monsterfst2= 50+level
+monsterfat1$= " wiped you with it's tail for"
+monsterfat2$= " bit you for"
+monsterfvit= 100+level
+else
+endif
+if monsterf= 18 then
+monsterf$= "A Ghazban Ogre"
+monsterfst1= level+10
+monsterfst2= level+15
+monsterfat1$= " hit you with it's big dagger for"
+monsterfat2$= " hit you vicously with it's dagger for"
+monsterfvit= 25+level
+else
+endif
+if monsterf= 19 then
+monsterf$= "A Land Leech"
+monsterfst1= level+10
+monsterfst2= level+100
+monsterfat1$= " wiped you with it's tail for"
+monsterfat2$= " sucks all your blood for"
+monsterfvit= 50+level
+else
+endif
+if monsterf= 20 then
+monsterf$= "A Cat Warrior"
+monsterfst1= 50+level
+monsterfst2= 75+level
+monsterfat1$= " gashes you with it's claws for"
+monsterfat2$= " slashes you with it's sword for"
+monstervit= 90+level
+else
+endif
+goto locate1:
+
+locate:
+if loca$= "FA" then
+goto FA1:
+else
+endif
+if loca$= "FB" then
+goto FB1:
+else
+endif
+if loca$= "FC" then
+goto FC1:
+else
+endif
+if loca$= "FD" then
+goto FD1:
+else
+endif
+if loca$= "FE" then
+goto FE1:
+else
+endif
+if loca$= "FF" then
+goto FF1:
+else
+endif
+if loca$= "FG" then
+goto FG1:
+else
+endif
+if loca$= "FH" then
+goto FH1:
+else
+endif
+if loca$= "FI" then
+goto FI1:
+else
+endif
+if loca$= "FJ" then
+goto FJ1:
+else
+endif
+if loca$= "FK" then
+goto FK1:
+else
+endif
+if loca$= "FL" then
+goto FL1:
+else
+endif
+if loca$= "FM" then
+goto FM1:
+else
+endif
+if loca$= "FN" then
+goto FN1:
+else
+endif
+if loca$= "FO" then
+goto FO1:
+else
+endif
+if loca$= "FP" then
+goto FP1:
+else
+endif
+if loca$= "FQ" then
+goto FQ1:
+else
+endif
+if loca$= "FR" then
+goto FR1:
+else
+endif
+if loca$= "FS" then
+goto FS1:
+else
+endif
+if loca$= "FT" then
+goto FT1:
+else
+endif
+if loca$= "FU" then
+goto FU1:
+else
+endif
+if loca$= "FV" then
+goto FV1:
+else
+endif
+if loca$= "FW" then
+goto FW1:
+else
+endif
+if loca$= "FX" then
+goto FX1:
+else
+endif
+if loca$= "FY" then
+goto FY1:
+else
+endif
+if loca$= "XX" then
+goto xx1:
+else
+endif
+if loca$= "FZ" then
+goto FZ1:
+else
+endif
+
+
+
+locate1:
+if loca$= "XX" then
+goto xx2:
+else
+endif
+if loca$= "FA" then
+goto FA2:
+else
+endif
+if loca$= "FB" then
+goto FB2:
+else
+endif
+if loca$= "FC" then
+goto FC2:
+else
+endif
+if loca$= "FD" then
+goto FD2:
+else
+endif
+if loca$= "FE" then
+goto FE2:
+else
+endif
+if loca$= "FF" then
+goto FF2:
+else
+endif
+if loca$= "FG" then
+goto FG2:
+else
+endif
+if loca$= "FH" then
+goto FH2:
+else
+endif
+if loca$= "FI" then
+goto FI2:
+else
+endif
+if loca$= "FJ" then
+goto FJ2:
+else
+endif
+if loca$= "FK" then
+goto FK2:
+else
+endif
+if loca$= "FL" then
+goto FL2:
+else
+endif
+if loca$= "FM" then
+goto FM2:
+else
+endif
+if loca$= "FN" then
+goto FN2:
+else
+endif
+if loca$= "FO" then
+goto FO2:
+else
+endif
+if loca$= "FP" then
+goto FP2:
+else
+endif
+if loca$= "FQ" then
+goto FQ2:
+else
+endif
+if loca$= "FR" then
+goto FR2:
+else
+endif
+if loca$= "FS" then
+goto FS2:
+else
+endif
+if loca$= "FT" then
+goto FT2:
+else
+endif
+if loca$= "FU" then
+goto FU2:
+else
+endif
+if loca$= "FV" then
+goto FV2:
+else
+endif
+if loca$= "FW" then
+goto FW2:
+else
+endif
+if loca$= "FX" then
+goto FX2:
+else
+endif
+if loca$= "FY" then
+goto FY2:
+else
+endif
+if loca$= "FZ" then
+goto FZ2:
+else
+goto fa2:
+endif
+
+XX:
+loca$= "XX"
+XX2:
+color 3,0
+print "You are in the Witches House"
+color 9,0
+print "There is a Witch here"
+color 1,0
+print "There is nothing on the floor"
+print ""
+xx1:
+color 9,0
+print "Command";
+input xx$
+xx$=ucase$(xx$)
+if xx$= "" then
+goto XX2:
+endif
+if xx$= "ENERGIZE" then
+goto teleport:
+endif
+if xx$= "MAP" then
+goto map:
+endif
+if xx$= "ROOM" then
+goto room:
+endif
+if xx$= "HEAL" then
+goto heal:
+endif
+if xx$= "S" then
+print ""
+goto sorrydir:
+endif
+if xx$= "SAVE" then
+save= 1
+goto filend:
+endif
+if xx$= "N" then
+goto sorrydir:
+endif
+if xx$= "C" then
+if prof= 1 then
+goto duh:
+endif
+goto spell:
+endif
+if xx$= "W" then
+goto fz:
+endif
+if xx$= "E" then
+goto sorrydir:
+endif
+if xx$= "B" then
+if reg= 1 then
+goto witchXX:
+else
+print ""
+print "Sorry, you may not buy anything from the witch until you register."
+print ""
+print "If you would like this Opption, please read the REGISTER.TXT."
+print ""
+goto xx1:
+endif
+witchXX:
+print ""
+color 3,0
+print witch1$
+print witch2$
+print witch3$
+print witch4$
+print witch5$
+print witch6$
+print witch7$
+print witch8$
+print witch9$
+print witch10$
+print witch11$
+print witch12$
+print ""
+color 7,0
+print "What # do you want (1-5)"
+input witch$
+witch$=ucase$(witch$)
+if witch$= "CORINNE LEFRANCOIS" then
+gold= gold+5000
+endif
+if witch$= "1" then
+if gold < 1000 then
+goto sorryg:
+else
+endif
+gold= gold-1000
+buff= rnd (0)
+buff= buff mod 20
+buff= buff+1
+agil= agil+buff
+print ""
+print "You the geen drink a potion and you feel faster"
+print ""
+goto xx1:
+else
+endif
+if witch$= "2" then
+if gold < 1200 then
+goto sorryg:
+else
+endif
+gold= gold-1200
+buff= rnd (0)
+buff= buff mod 20
+buff= buff+1
+str=str+buff
+print ""
+print "You drink the bubbling potion and feel stronger"
+print ""
+goto xx1:
+else
+endif
+if witch$= "3" then
+if gold < 2000 then
+goto sorryg:
+else
+endif
+gold= gold-2000
+buff= rnd (0)
+buff= buff mod 5
+buff= buff+1
+weapon= weapon+buff
+print ""
+print "You the strike the stone to your weapon. It looks stronger."
+print ""
+goto xx1:
+else
+endif
+if witch$= "4" then
+if gold < 2500 then
+goto sorryg:
+else
+endif
+gold= gold-2500
+buff= rnd (0)
+buff= buff mod 20
+buff= buff+1
+vit1= vit1+buff
+print ""
+print "You the drink a gold swirling potion and you feel better"
+print ""
+goto xx1:
+else
+endif
+if witch$= "5" then
+if gold < 6000 then
+goto sorryg:
+else
+endif
+gold= gold-6000
+buff= rnd (0)
+buff= buff mod 20
+buff= buff+1
+vit1= vit1+buff
+str= str+buff
+agil= agil+buff
+print ""
+print "You the drink a black smoking potion and you feel better"
+print ""
+goto xx1:
+else
+print ""
+print "This is not a Valid choice"
+print ""
+goto xx1:
+endif
+endif
+if xx$= "EP" then
+goto expir:
+endif
+if xx$= "? EXP" then
+goto epchart:
+endif
+if xx$= "VIT" then
+goto vital:
+endif
+if xx$= "?" then
+goto help:
+endif
+if xx$= "I" then
+goto inventory:
+endif
+if xx$= "LS I" then
+print ""
+color 3,0
+print witch1$
+print witch2$
+print witch3$
+print witch4$
+print witch5$
+print witch6$
+print witch7$
+print witch8$
+print witch9$
+print witch10$
+print witch11$
+print witch12$
+print ""
+color 9,0
+goto xx1:
+endif
+if xx$= "ALL" then
+print ""
+goto allstats:
+else
+endif
+if xx$= "X" then
+exit= 1
+goto exit:
+else
+goto nocommand:
+endif
+
+map:
+cls
+color 9,0
+print map0$
+print map1$
+print map2$
+print map3$
+print map4$
+print map5$
+print map6$
+print map7$
+print map8$
+print map9$
+print map10$
+print map11$
+print map12$
+print map13$
+print map14$
+print map15$
+print map16$
+print map17$
+print map18$
+print map19$
+color 7,0
+if loca$= "FA" then
+locate 3,31
+print "X"
+endif
+if loca$= "FB" then
+locate 5,31
+print "X"
+endif
+if loca$= "FC" then
+locate 5,34
+print "X"
+endif
+if loca$= "FD" then
+locate 5,28
+print "X"
+endif
+if loca$= "FE" then
+locate 7,28
+print "X"
+endif
+if loca$= "FF" then
+locate 5,37
+print "X"
+endif
+if loca$= "FG" then
+locate 7,37
+print "X"
+endif
+if loca$= "FH" then
+locate 7,34
+print "X"
+endif
+if loca$= "FI" then
+locate 9,34
+print "X"
+endif
+if loca$= "FJ" then
+locate 7,31
+print "X"
+endif
+if loca$= "FK" then
+locate 9,31
+print "X"
+endif
+if loca$= "FL" then
+locate 9,28
+print "X"
+endif
+if loca$= "FM" then
+locate 11,34
+print "X"
+endif
+if loca$= "FN" then
+locate 9,37
+print "X"
+endif
+if loca$= "FO" then
+locate 11,37
+print "X"
+endif
+if loca$= "FP" then
+locate 11,31
+print "X"
+endif
+if loca$= "FQ" then
+locate 13,31
+print "X"
+endif
+if loca$= "FR" then
+locate 11,41
+print "X"
+endif
+if loca$= "FS" then
+locate 13,37
+print "X"
+endif
+if loca$= "FT" then
+locate 13,40
+print "X"
+endif
+if loca$= "FU" then
+locate 13,34
+print "X"
+endif
+if loca$= "FV" then
+locate 15,34
+print "X"
+endif
+if loca$= "FW" then
+locate 15,40
+print "X"
+endif
+if loca$= "FX" then
+locate 13,43
+print "X"
+endif
+if loca$= "FY" then
+locate 11,43
+print "X"
+endif
+if loca$= "FZ" then
+locate 15,43
+print "X"
+endif
+if loca$= "XX" then
+locate 15,46
+print "X"
+endif
+locate 20,0
+goto locate:
+
+teleport:
+if reg= 0 then
+color 9,0
+print ""
+print "Sorry, but, yep, even some of the secret codes require you to register"
+print ""
+goto locate:
+endif
+print ""
+color 3,0
+print "Goto what room ";
+input whatroom$
+whatroom$=ucase$(whatroom$)
+loca$= whatroom$
+goto locate1:
+
+room:
+color 3,0
+print ""
+print "Room = ";
+print loca$
+print ""
+goto locate:
+
+sorryg:
+color 9,0
+print ""
+print "Sorry you don't have enough gold to buy this item"
+print ""
+goto locate:
+
+die:
+print ""
+color 9,0
+print "                         You Fall to the ground lifeless"
+print ""
+sound 10,32000
+color 1,0
+print "                               < Press any key >"
+die= 1
+loop980: xx46$= inkey$
+if xx46$= "" then loop980:
+cls
+goto exit:
+
+
+exit:
+print ""
+hello= 0
+chdir "c:\vile"
+kill "forest.log"
+run "copy c:\vile\temp\game.bak"
+name "game.bak" AS "foest.log"
+open "O", 1 "forest.log"
+print#1 hello
+print#1 die
+print#1 exit
+print#1 loca$
+print#1 regular
+close 1
+bye$= "COPYRIGHT 1997 ERIC NUSBAUM"
